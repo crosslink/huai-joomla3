@@ -12,9 +12,13 @@ defined ( '_JEXEC' ) or die ();
 ?>
 <div class="kmsg-header kmsg-header-top">
 	<h2>
-		<span class="kmsgtitle<?php echo $this->escape($this->msgsuffix) ?> kmsg-title-top">
-			<?php echo $this->displayMessageField('subject') ?>
-		</span>
+
+<span>
+
+	&nbsp;&nbsp;&nbsp;		<?php echo $this->profile->getLink() ?>
+
+</span>
+
 		<span class="kmsgdate kmsgdate-top" title="<?php echo KunenaDate::getInstance($this->message->time)->toKunena('config_post_dateformat_hover') ?>">
 			<?php echo KunenaDate::getInstance($this->message->time)->toKunena('config_post_dateformat') ?>
 		</span>
@@ -26,11 +30,7 @@ defined ( '_JEXEC' ) or die ();
 </div>
 <table class="<?php echo $this->class ?>">
 	<tbody>
-		<tr>
-			<td class="kprofile-top">
-				<?php $this->displayMessageProfile('horizontal') ?>
-			</td>
-		</tr>
+
 		<tr>
 			<td class="kmessage-top">
 				<?php $this->displayMessageContents() ?>

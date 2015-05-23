@@ -17,7 +17,7 @@
 
 /* ------------------------- COLOR PALETTE FOR BLUE EAGLE
 
-Dark blue color: 			#5388B4			RGB: 83/136/180
+Dark blue color: 			#333			RGB: 83/136/180
 Medium blue color: 			#609FBF			RGB: 96/159/191
 Light grey color:			#F2F1EE 		RGB: 242/241/238
 Medium grey color:			#999999 		RGB: 153/153/153
@@ -91,7 +91,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 }
 
 #Kunena div.kblock div.ktitle {
-	background-color: #5388B4;
+	background-color: #333;
 	color: #FFFFFF;
 }
 #Kunena div.kblock div.ktitle h1,

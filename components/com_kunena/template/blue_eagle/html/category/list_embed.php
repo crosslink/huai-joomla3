@@ -38,9 +38,17 @@ foreach ( $this->sections as $section ) :
 	?>
 		<tr class="k<?php echo $tabclass [$k ^= 1], isset ( $category->class_sfx ) ? ' k' . $this->escape($tabclass [$k]) . $this->escape($category->class_sfx) : '' ?>"
 			id="kcat<?php echo intval($category->id) ?>">
+
+
+
+
+
+
 			<td class="kcol-first kcol-category-icon hidden-phone">
 				<?php echo $this->getCategoryLink($category, $this->getCategoryIcon($category), '') ?>
 			</td>
+
+
 
 			<td class="kcol-mid kcol-kcattitle">
 			<div class="kthead-title kl">
@@ -60,9 +68,19 @@ foreach ( $this->sections as $section ) :
 				?>
 			</div>
 
+
+				(<?php echo $this->formatLargeNumber ( $category->getTopics() ) ?>/
+
+		         	<?php echo $this->formatLargeNumber ( $category->getReplies() ) ?>)
+
+
 		<?php if (!empty($category->description)) : ?>
 			<div class="kthead-desc km hidden-phone"><?php echo KunenaHtmlParser::parseBBCode ($category->description) ?> </div>
 		<?php endif; ?>
+
+
+
+
 		<?php
 			// Display subcategories
 			if (! empty ( $this->categories [$category->id] )) :
@@ -70,7 +88,7 @@ foreach ( $this->sections as $section ) :
 			<div class="kthead-child">
 			<div class="kcc-table">
 			<?php foreach ( $this->categories [$category->id] as $childforum ) : ?>
-			<div class="kcc-subcat km">
+	 	<div class="kcc-subcat km">
 			<?php
 				echo $this->getCategoryIcon($childforum, true);
 				echo $this->getCategoryLink($childforum);
@@ -100,16 +118,7 @@ foreach ( $this->sections as $section ) :
 		<?php endif; ?>
 			</td>
 
-			<td class="kcol-mid kcol-kcattopics hidden-phone">
-				<span class="kcat-topics-number"><?php echo $this->formatLargeNumber ( $category->getTopics() ) ?></span>
-				<span class="kcat-topics"><?php echo JText::_('COM_KUNENA_TOPICS');?></span>
-			</td>
-
-			<td class="kcol-mid kcol-kcatreplies hidden-phone">
-				<span class="kcat-replies-number"><?php echo $this->formatLargeNumber ( $category->getReplies() ) ?></span>
-				<span class="kcat-replies"><?php echo JText::_('COM_KUNENA_GEN_REPLIES');?> </span>
-			</td>
-
+	
 			<?php $last = $category->getLastTopic();
 			if ($last->exists()) { ?>
 			<td class="kcol-mid kcol-kcatlastpost">
@@ -121,15 +130,18 @@ foreach ( $this->sections as $section ) :
 					<span class="klatest-avatar hidden-phone"> <?php echo $last->getLastPostAuthor()->getLink( $useravatar ); ?></span>
 				<?php endif; ?>
 			<?php endif; ?>
-			<div class="klatest-subject ks">
-				<?php echo JText::_('COM_KUNENA_GEN_LAST_POST') . ': '. $this->getLastPostLink($category) ?>
+			
+	<div class="klatest-subject ks">
+				<?php echo  $this->getLastPostLink($category) ?>
 			</div>
+
+
 
 			<div class="klatest-subject-by ks hidden-phone">
 			<?php
 					echo JText::_('COM_KUNENA_BY') . ' ';
 					echo $last->getLastPostAuthor()->getLink();
-					echo '<br /><span class="nowrap" title="' . KunenaDate::getInstance($last->last_post_time)->toKunena('config_post_dateformat_hover') . '">' . KunenaDate::getInstance($last->last_post_time)->toKunena('config_post_dateformat') . '</span>';
+					echo '&nbsp;<span class="nowrap" title="' . KunenaDate::getInstance($last->last_post_time)->toKunena('config_post_dateformat_hover') . '">' . KunenaDate::getInstance($last->last_post_time)->toKunena('config_post_dateformat') . '</span>';
 					?>
 			</div>
 			</td>

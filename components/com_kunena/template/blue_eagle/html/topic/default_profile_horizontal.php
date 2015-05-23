@@ -24,9 +24,7 @@ defined ( '_JEXEC' ) or die ();
 			<?php if ($this->userposts) : ?>
 				<span class="kpost-userposts"><?php echo JText::_('COM_KUNENA_POSTS') . intval($this->userposts); ?></span>
 			<?php endif ?>
-			<?php if ($this->userthankyou) : ?>
-				<span class="kpost-userposts"><?php echo JText::_('COM_KUNENA_MYPROFILE_THANKYOU_RECEIVED') .' '. intval($this->userthankyou); ?></span>
-			<?php endif ?>
+
 			<?php if ($this->userpoints) : ?>
 				<span class="kpost-userposts"><?php echo JText::_('COM_KUNENA_AUP_POINTS') . intval($this->userpoints); ?></span>
 			<?php endif ?>
@@ -62,7 +60,7 @@ defined ( '_JEXEC' ) or die ();
 			<?php echo $this->userrankimage ?>
 		</li>
 		<?php endif ?>
-		<li><span class="kicon-button kbuttononline-<?php echo $this->profile->isOnline('yes', 'no') ?>"><span class="online-<?php echo $this->profile->isOnline('yes', 'no') ?>"><span><?php echo $this->profile->isOnline() ? JText::_('COM_KUNENA_ONLINE') : JText::_('COM_KUNENA_OFFLINE'); ?></span></span></span></li>
+	
 		<?php if ( !empty($this->userkarma) ) : ?>
 		<li class="kpost-karma">
 			<span class="kmsgkarma">

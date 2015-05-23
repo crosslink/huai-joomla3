@@ -11,11 +11,28 @@
 defined ( '_JEXEC' ) or die ();
 ?>
 
-<div class="kmsgbody">
+<div class="kmessage-buttons-cover">
+
+
+		<span class="kmsgdate kmsgdate-left" title="<?php echo KunenaDate::getInstance($this->message->time)->toKunena('config_post_dateformat_hover') ?>">
+			<?php echo KunenaDate::getInstance($this->message->time)->toKunena('config_post_dateformat') ?>
+		</span>
+
+
+		<span class="kmsg-id-left">
+			<a id="<?php echo intval($this->message->id) ?>"></a>
+			<?php echo $this->numLink ?>
+		</span>
+
+</div>
+<br>
+
+
 	<div class="kmsgtext">
 		<?php echo KunenaHtmlParser::parseBBCode ($this->message->message, $this) ?>
 	</div>
 </div>
+
 <div>
 <?php if (!empty($this->attachments)) : ?>
 <div class="kmsgattach">
@@ -57,7 +74,12 @@ defined ( '_JEXEC' ) or die ();
 		<?php endif; ?>
 		<input type="submit" class="kbutton kreply-submit" name="submit" value="<?php echo JText::_('COM_KUNENA_SUBMIT') ?>" title="<?php echo (JText::_('COM_KUNENA_EDITOR_HELPLINE_SUBMIT'));?>" />
 		<input type="reset" class="kbutton kreply-cancel" name="cancel" value="<?php echo JText::_('COM_KUNENA_CANCEL') ?>" title="<?php echo (JText::_('COM_KUNENA_EDITOR_HELPLINE_CANCEL'));?>" />
-		<small><?php echo JText::_('COM_KUNENA_QMESSAGE_NOTE') ?></small>
+
+
+
 	</form>
 </div>
+
+
+
 <?php endif ?>

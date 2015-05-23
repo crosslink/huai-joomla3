@@ -23,13 +23,33 @@ $this->cache = false;
 
 <tr class="<?php echo $this->getTopicClass('k', 'row') ?>">
 
-	<td class="kcol-first kcol-ktopicreplies hidden-phone">
-		<strong><?php echo $this->formatLargeNumber ( max(0,$this->topic->getTotal()-1) ); ?></strong> <?php echo JText::_('COM_KUNENA_GEN_REPLIES') ?>
-	</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<td class="kcol-mid kcol-ktopicicon hidden-phone">
 		<?php echo $this->getTopicLink ( $this->topic, 'unread', $this->topic->getIcon() ) ?>
 	</td>
+
+
+
+
+
+
+
+
 
 	<td class="kcol-mid kcol-ktopictitle">
 		<?php if ($this->topic->attachments) echo $this->getIcon ( 'ktopicattach', JText::_('COM_KUNENA_ATTACH') ); ?>
@@ -49,23 +69,16 @@ $this->cache = false;
 				echo $this->getTopicLink ( $this->topic, 'unread', '<sup dir="ltr" class="knewchar">(' . $this->topic->unread . ' ' . JText::_('COM_KUNENA_A_GEN_NEWCHAR') . ')</sup>' );
 			}
 			?>
-		</div>
 
-		<div class="ktopic-details">
-			<span class="ktopic-category"> <?php echo JText::sprintf('COM_KUNENA_CATEGORY_X', $this->getCategoryLink ( $this->topic->getCategory() ) ) ?></span>
-		</div>
-		<div class="ktopic-details-kcategory" style="clear:both;">
-			<span class="ktopic-posted-time" title="<?php echo KunenaDate::getInstance($this->topic->first_post_time)->toKunena('config_post_dateformat_hover'); ?>">
-				<?php echo JText::_('COM_KUNENA_TOPIC_STARTED_ON') . ' ' . KunenaDate::getInstance($this->topic->first_post_time)->toKunena('config_post_dateformat');?>
-			</span>
-			<span class="ktopic-by ks"><?php echo JText::_('COM_KUNENA_BY') . ' ' . $this->topic->getFirstPostAuthor()->getLink() ?></span>
-            </div>
-            <div class="ktopic-details-kcategory" style="clear:both;">
+	</div>
+
+
+        <div class="ktopic-details-kcategory" style="clear:both;">
 		<?php if ($this->pages > 1) : ?>
 		<ul class="kpagination">
 			<li class="page"><?php echo JText::_('COM_KUNENA_PAGE') ?></li>
 			<li><?php echo $this->GetTopicLink ( $this->topic, 0, 1 ) ?></li>
-			<?php if ($this->pages > 4) : $startPage = $this->pages - 3; ?>
+			<?php if ($this->pages > 6) : $startPage = $this->pages - 5; ?>
 			<li class="more">...</li>
 			<?php else: $startPage = 1; endif;
 			for($hopPage = $startPage; $hopPage < $this->pages; $hopPage ++) : ?>
@@ -73,7 +86,31 @@ $this->cache = false;
 			<?php endfor; ?>
 		</ul>
 		<?php endif; ?>
-		</div>
+	
+	</div>
+
+
+
+
+
+
+		<div class="ktopic-details">
+			<span class="ktopic-category"> <?php echo JText::sprintf('COM_KUNENA_CATEGORY_X', $this->getCategoryLink ( $this->topic->getCategory() ) ) ?>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+
+			<span class="ktopic-posted-time" title="<?php echo KunenaDate::getInstance($this->topic->first_post_time)->toKunena('config_post_dateformat_hover'); ?>">
+				<?php echo KunenaDate::getInstance($this->topic->first_post_time)->toKunena('config_post_dateformat');?>
+			</span>
+			<span class="ktopic-by ks"><?php echo JText::_('COM_KUNENA_BY') . ' ' . $this->topic->getFirstPostAuthor()->getLink() ?></span>
+            </div>
+           
+
+
+
+
+
+
+
+
 
 		<?php if (!empty($this->keywords)) : ?>
 		<div class="ktopic-keywords">
@@ -82,10 +119,36 @@ $this->cache = false;
 		<?php endif; ?>
 	</td>
 
-	<td class="kcol-mid kcol-ktopicviews hidden-phone">
-		<span class="ktopic-views-number"><?php echo $this->formatLargeNumber ( $this->topic->hits );?></span>
-		<span class="ktopic-views"> <?php echo JText::_('COM_KUNENA_GEN_HITS');?> </span>
-	</td>
+
+
+
+
+
+
+
+
+
+<td class="kcol-mid kcol-ktopicviews hidden-phone">
+		<span class="ktopic-date">
+		<?php echo $this->formatLargeNumber ( max(0,$this->topic->getTotal()-1) ); ?>
+ <?php echo JText::_('COM_KUNENA_GEN_REPLIES') ?></span>
+
+<br>
+<span class="ktopic-date"><?php echo $this->formatLargeNumber ( $this->topic->hits );?> <?php echo JText::_('COM_KUNENA_GEN_HITS');?> </span>
+</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<td class="kcol-mid kcol-ktopiclastpost">
 		<div class="klatest-post-info">
