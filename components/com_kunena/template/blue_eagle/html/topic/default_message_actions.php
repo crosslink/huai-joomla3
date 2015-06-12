@@ -16,6 +16,10 @@ if ($this->message->modified_time) {
 	$dateshown = KunenaDate::getInstance($this->message->modified_time)->toKunena('config_post_dateformat' ).' ';
 }
 ?>
+
+
+
+
 <div>
 	<?php if ($this->signatureHtml) : ?>
 	<div class="kmsgsignature">
@@ -23,6 +27,8 @@ if ($this->message->modified_time) {
 	</div>
 	<?php endif ?>
 </div>
+
+
 <div class="kmessage-editmarkup-cover hidden-phone">
 	<?php if ($this->message->modified_by && $this->config->editmarkup) : ?>
 	<span class="kmessage-editmarkup hidden-phone" <?php echo $datehover ?>>
@@ -37,12 +43,15 @@ if ($this->message->modified_time) {
 	<?php endif ?>
 	<?php endif ?>
 </div>
+
+
 <div class="kmessage-buttons-cover">
 	<div class="kmessage-buttons-row">
 	<?php if (empty($this->message_closed)) : ?>
 		<?php echo $this->messageButtons->get('edit'); ?>
 		<?php echo $this->messageButtons->get('quickreply'); ?>
 		<?php echo $this->messageButtons->get('reply'); ?>
+               <?php echo $this->topicButtons->get('create') ?>
 		<?php echo $this->messageButtons->get('quote'); ?>
 
 		<?php echo $this->messageButtons->get('moderate'); ?>
@@ -51,7 +60,7 @@ if ($this->message->modified_time) {
 		<?php echo $this->messageButtons->get('undelete'); ?>
 		<?php echo $this->messageButtons->get('publish'); ?>
 	<?php else : ?>
-		<?php echo $this->message_closed; ?>
+
 		<?php if( !$this->topic->locked ) : ?>
 			<?php echo $this->messageButtons->get('edit'); ?>
 			<?php echo $this->messageButtons->get('moderate'); ?>
@@ -63,12 +72,18 @@ if ($this->message->modified_time) {
 	<?php endif ?>
 	</div>
 </div>
+
+
+
 <?php if($this->messageButtons->get('thankyou')): ?>
 <div class="kpost-thankyou">
 	<?php echo $this->messageButtons->get('thankyou'); ?>
 </div>
 <?php endif; ?>
-<?php if(!empty($this->thankyou)): ?>
+
+
+
+<?php if(!empty($this->thankyou)): ?>
 <div class="kmessage-thankyou">
 <?php
 	echo JText::_('COM_KUNENA_THANKYOU').': '.implode(', ', $this->thankyou).' ';
@@ -76,3 +91,4 @@ if ($this->message->modified_time) {
 ?>
 </div>
 <?php endif; ?>
+

@@ -14,6 +14,6 @@ $this->displayBreadcrumb ();
 $this->displayLayout();
 
 
-$this->displayFooter ();
+
 ?>
 </div>

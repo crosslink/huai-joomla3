@@ -1,25 +1,9 @@
 <?php
-/**
- * Kunena Component
- * @package Kunena.Template.Blue_Eagle
- * @subpackage Search
- *
- * @copyright (C) 2008 - 2015 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- **/
+
 defined ( '_JEXEC' ) or die ();
 ?>
 					<table>
-						<thead>
-							<tr class="ksth">
-								<th colspan="2">
-									<span class="kmsgdate">
-										<?php echo KunenaDate::getInstance($this->message->time)->toSpan() ?>
-									</span>
-								</th>
-							</tr>
-						</thead>
+					
 						<tbody>
 							<tr>
 								<td rowspan="2" valign="top" class="kprofile-left kresultauthor">
@@ -53,7 +37,20 @@ defined ( '_JEXEC' ) or die ();
 											<?php echo $this->messageHtml ?>
 										</div>
 										<div class="resultcat">
-											<?php echo JText::sprintf('COM_KUNENA_CATEGORY_X', $this->getCategoryLink ( $this->category, $this->escape($this->category->name))) ?>
+											<span class="kmsgdate"> <?php echo JText::sprintf('COM_KUNENA_CATEGORY_X', $this->getCategoryLink ( $this->category, $this->escape($this->category->name))) ?></span>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="kmsgdate">
+										<?php echo KunenaDate::getInstance($this->message->time)->toSpan() ?>
+									</span>
+
+
+
+
+
+
+
 										</div>
 									</div>
 								</td>

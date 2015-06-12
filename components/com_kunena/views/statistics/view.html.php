@@ -36,7 +36,7 @@ class KunenaViewStatistics extends KunenaView {
 		$profile = KunenaFactory::getProfile ();
 		$link = $profile->getUserListURL ( $action, true );
 
-		return "<a href=\"{$link}\" title=\"{$title}\" rel=\"{$rel}\">{$name}</a>";
+		return "<a href=\"{$link}\" title=\"{$HITS}\" rel=\"{$rel}\">{$name}</a>";
 	}
 
 	protected function _prepareDocument(){

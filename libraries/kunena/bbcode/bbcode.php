@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Kunena Component
  * @package Kunena.Framework
@@ -1397,6 +1397,24 @@ class KunenaBbcodeLibrary extends BBCodeLibrary {
 		'youtube' => array ('iframe', 425, 355, 0, 0, 'http://www.youtube.com/embed/%vcode%', '\/watch\?v=([\w\-]*)' , array (array (6, 'wmode', 'transparent' ) ) ),
 
 		'youku' => array ('flash', 425, 355, 0, 0, 'http://player.youku.com/player.php/Type/Folder/Fid/18787874/Ob/1/sid/%vcode%/v.swf', '\/watch\?v=([\w\-]*)' , array (array (6, 'wmode', 'transparent' ) ) ),
+
+
+
+
+		'tudou' => array ('flash', 425, 355, 0, 0, 'http://www.tudou.com/v/%vcode%/&resourceId=0_04_02_99&tid=0/v.swf
+', '\/watch\?v=([\w\-]*)' , array (array (6, 'wmode', 'transparent' ) ) ),
+
+
+
+
+		'sina' => array ('flash', 425, 355, 0, 0, 'http://video.sina.com.cn/share/video/%vcode%.swf
+', '\/watch\?v=([\w\-]*)' , array (array (6, 'wmode', 'transparent' ) ) ),
+
+
+
+
+
+
 
 		// Cannot allow public flash objects as it opens up a whole set of vulnerabilities through hacked flash files
 		//				'_default' => array ($vid ["type"], 480, 360, 0, 25, $content, '', '' )

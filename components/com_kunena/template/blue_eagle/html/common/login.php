@@ -27,11 +27,11 @@ defined ( '_JEXEC' ) or die ();
 					<div class="input">
 						<span>
 							<?php echo JText::_('COM_KUNENA_LOGIN_USERNAME') ?>
-							<input type="text" name="username" class="inputbox ks" alt="username" size="18" />
+							<input type="text" name="username" class="inputbox ks" alt="username" size="12" />
 						</span>
 						<span>
 							&nbsp; &nbsp; <?php echo JText::_('COM_KUNENA_LOGIN_PASSWORD'); ?>
-							<input type="password" name="password" class="inputbox ks" size="18" alt="password" /></span>
+							<input type="password" name="password" class="inputbox ks" size="12" alt="password" /></span>
 						<span>&nbsp; &nbsp; 
 							<?php if($this->remember) : ?>
 							<?php echo JText::_('COM_KUNENA_LOGIN_REMEMBER_ME'); ?>
@@ -49,16 +49,9 @@ defined ( '_JEXEC' ) or die ();
 
 
 					</div>
-					<div class="klink-block">
-						
-						
-						<?php
-						if ($this->registerUrl) : ?>
-						<span class="kprofilebox-register">
-							<a href="<?php echo $this->registerUrl ?>" rel="nofollow"><?php echo JText::_('COM_KUNENA_PROFILEBOX_CREATE_ACCOUNT') ?></a>
-						</span>
-						<?php endif; ?>
-					</div>
+				
+
+
 				</form>
 				<?php endif; ?>
 			</td>

@@ -1,13 +1,5 @@
 <?php
-/**
- * Kunena Component
- * @package Kunena.Template.Blue_Eagle
- * @subpackage Topic
- *
- * @copyright (C) 2008 - 2015 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- **/
+
 defined ( '_JEXEC' ) or die ();
 ?>
 
@@ -18,7 +10,7 @@ defined ( '_JEXEC' ) or die ();
 			<?php echo KunenaDate::getInstance($this->message->time)->toKunena('config_post_dateformat') ?>
 		</span>
 
-
+&nbsp;&nbsp;
 		<span class="kmsg-id-left">
 			<a id="<?php echo intval($this->message->id) ?>"></a>
 			<?php echo $this->numLink ?>
@@ -83,3 +75,4 @@ defined ( '_JEXEC' ) or die ();
 
 
 <?php endif ?>
+

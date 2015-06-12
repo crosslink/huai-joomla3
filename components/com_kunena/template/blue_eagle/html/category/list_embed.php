@@ -17,11 +17,11 @@ foreach ( $this->sections as $section ) :
 	$htmlClassTitleCover = !empty ( $section->class_sfx ) ? ' ktitle-cover' . $this->escape($section->class_sfx) : '';
 ?>
 <div class="kblock kcategories-<?php echo intval($section->id) ?>">
-	<div class="kheader">
+	<div class="kheaderhei">
 		<?php if (count($this->sections) > 0) : ?>
 		<span class="ktoggler"><a class="ktoggler close" title="<?php echo JText::_('COM_KUNENA_TOGGLER_COLLAPSE') ?>" rel="catid_<?php echo intval($section->id) ?>"></a></span>
 		<?php endif; ?>
-		<h1><span><?php echo $this->GetCategoryLink ( $section, $this->escape($section->name) ); ?></span></h1>
+		<h1bai><span><?php echo $this->GetCategoryLink ( $section, $this->escape($section->name) ); ?></span></h1bai>
 		<?php if (!empty($section->description)) : ?>
 		<div class="ktitle-desc km hidden-phone">
 			<?php echo KunenaHtmlParser::parseBBCode ( $section->description ); ?>

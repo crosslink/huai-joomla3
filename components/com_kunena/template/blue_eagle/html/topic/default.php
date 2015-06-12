@@ -29,10 +29,8 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS', true).'
 ?>
 
 <div class="kblock">
-	<div class="kheader">
-		
-<h1><span><?php echo JText::_('COM_KUNENA_TOPIC') ?> <?php echo $this->escape($this->topic->subject) ?></span></h1>
-
+	<div class="kheaderhei">
+		<h1bai><span><?php echo JText::_('COM_KUNENA_TOPIC') ?> <?php echo $this->escape($this->topic->subject) ?></span></h1>
 		<?php $this->displayModulePosition( 'kunena_topictitle' ); ?>
 		<?php if ($this->usertopic->favorite) : ?><div class="kfavorite"></div><?php endif ?>
 		<?php if (!empty($this->keywords)) : ?><div class="kkeywords"><?php echo JText::sprintf('COM_KUNENA_TOPIC_TAGS', $this->escape($this->keywords)) ?></div><?php endif ?>
@@ -42,6 +40,9 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS', true).'
 	</div>
 </div>
 <?php $this->displayTopicActions(); ?>
+
+
+
 
 <div class="kcontainer klist-bottom">
 	<div class="kbody">

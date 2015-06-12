@@ -1,13 +1,5 @@
 <?php
-/**
- * Kunena Component
- * @package Kunena.Template.Blue_Eagle
- * @subpackage Category
- *
- * @copyright (C) 2008 - 2015 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- **/
+
 defined ( '_JEXEC' ) or die ();
 
 // Disable caching
@@ -23,13 +15,26 @@ $this->cache = false;
 
 <tr class="<?php echo $this->getTopicClass('k', 'row') ?>">
 
-	<td class="kcol-first kcol-ktopicreplies hidden-phone">
-		<strong><?php echo $this->formatLargeNumber ( max(0,$this->topic->getTotal()-1) ); ?></strong> <?php echo JText::_('COM_KUNENA_GEN_REPLIES') ?>
-	</td>
+
+
+
+
+
+
+
+
+
+
+
 
 	<td class="kcol-mid kcol-ktopicicon hidden-phone">
 		<?php echo $this->getTopicLink ( $this->topic, 'unread', $this->topic->getIcon() ) ?>
 	</td>
+
+
+
+
+
 
 	<td class="kcol-mid kcol-ktopictitle">
     <div class="ktopic-details">
@@ -62,6 +67,9 @@ $this->cache = false;
 			<span class="ktopic-by ks"><?php echo JText::_('COM_KUNENA_BY') . ' ' . $this->topic->getFirstPostAuthor()->getLink() ?></span>
 		  </div>
 
+
+
+
         <div class="ktopic-details-kcategory" style="clear:both;">
 		<?php if ($this->pages > 1) : ?>
 		<ul class="kpagination">
@@ -85,10 +93,24 @@ $this->cache = false;
 	  </div>
 	</td>
 
-	<td class="kcol-mid kcol-ktopicviews visible-desktop">
-		<span class="ktopic-views-number"><?php echo $this->formatLargeNumber ( $this->topic->hits );?></span>
-		<span class="ktopic-views"> <?php echo JText::_('COM_KUNENA_GEN_HITS');?> </span>
-	</td>
+
+
+
+
+
+<td class="kcol-first kcol-ktopicreplies hidden-phone">
+<span class="ktopic-date">
+<?php echo $this->formatLargeNumber ( max(0,$this->topic->getTotal()-1) ); ?> <?php echo JText::_('COM_KUNENA_GEN_REPLIES') ?>
+</span>
+<br>
+<span class="ktopic-date">
+<?php echo $this->formatLargeNumber ( $this->topic->hits );?><?php echo JText::_('COM_KUNENA_GEN_HITS');?> 
+</span>
+</td>
+
+
+
+
 
 	<td class="kcol-mid kcol-ktopiclastpost">
 		<div class="klatest-post-info">

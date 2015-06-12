@@ -1,13 +1,6 @@
 <?php
-/**
- * Kunena Component
- * @package Kunena.Template.Blue_Eagle
- * @subpackage Topics
- *
- * @copyright (C) 2008 - 2015 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- **/
+
+
 defined ( '_JEXEC' ) or die ();
 ?>
 
@@ -16,11 +9,11 @@ defined ( '_JEXEC' ) or die ();
 	<?php echo JHtml::_( 'form.token' ); ?>
 
 <div class="kblock kflat">
-	<div class="kheader">
+	<div class="kheaderhei">
 		<?php if (!empty($this->topicActions)) : ?>
 		<span class="kcheckbox select-toggle"><input class="kcheckall" type="checkbox" name="toggle" value="" /></span>
 		<?php endif; ?>
-		<h2><span><?php echo $this->escape($this->headerText); ?></span></h2>
+		<h1bai><span><?php echo $this->escape($this->headerText); ?></span></h1bai>
 	</div>
 	<div class="kcontainer">
 		<div class="kbody">

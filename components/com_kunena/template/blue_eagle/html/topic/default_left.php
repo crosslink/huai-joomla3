@@ -11,10 +11,11 @@
 defined ( '_JEXEC' ) or die ();
 ?>
 
+
 <table class="<?php echo $this->class ?>">
 	<tbody>
 		<tr>
-			<td rowspan="2" class="kprofile-left">
+			<td rowspan="2" class="kprofile-left hidden-phone">
 				<?php $this->displayMessageProfile('vertical') ?>
 			</td>
 			<td class="kmessage-left">
@@ -28,6 +29,8 @@ defined ( '_JEXEC' ) or die ();
 		</tr>
 	</tbody>
 </table>
+
+
 
 <!-- Begin: Message Module Position -->
 <?php $this->displayModulePosition('kunena_msg_' . $this->mmm) ?>

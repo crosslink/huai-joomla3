@@ -90,15 +90,3 @@ if (is_file ( KPATH_SITE . "/controllers/{$view}.php" )) {
 // Remove custom error handlers.
 KunenaError::cleanup ();
 
-// Display profiler information
-$kunena_time = $kunena_profiler->stop('Total Time');
-if (KUNENA_PROFILER) {
-	echo '<div class="kprofiler">';
-	echo "<h3>Kunena Profile Information</h3>";
-	foreach($kunena_profiler->getAll() as $item) {
-		//if ($item->getTotalTime()<($kunena_time->getTotalTime()/20)) continue;
-		if ($item->getTotalTime()<0.002 && $item->calls < 20) continue;
-		echo sprintf ("Kunena %s: %0.3f / %0.3f seconds (%d calls)<br/>", $item->name, $item->getInternalTime(), $item->getTotalTime(), $item->calls);
-	}
-	echo '</div>';
-}

@@ -20,10 +20,15 @@ window.addEvent('domready', function() {
 }
 ?>
 <div class="kblock kadvsearch">
+
+
+
 	<div class="kheader">
 		<span class="ktoggler"><a class="ktoggler <?php echo $this->search_class; ?>" title="<?php echo $this->search_title ?>" rel="advsearch"></a></span>
 		<h2><span><?php echo JText::_('COM_KUNENA_SEARCH_ADVSEARCH'); ?></span></h2>
 	</div>
+
+
 	<div class="kcontainer">
 		<div class="kbody">
 <form action="<?php echo KunenaRoute::_('index.php?option=com_kunena') ?>" method="post" name="searchform" id="searchform">
@@ -151,15 +156,17 @@ window.addEvent('domready', function() {
 
 <?php if($this->results): ?>
 <div class="kblock ksearchresult">
-	<div class="kheader">
+	<div class="kheaderhei">
 		<span class="ktoggler"><a class="ktoggler close" title="<?php echo JText::_('COM_KUNENA_TOGGLER_COLLAPSE') ?>" rel="ksearchresult"></a></span>
-		<h2>
-			<span>
-				<?php echo JText::_('COM_KUNENA_SEARCH_RESULTS'); ?>
-			</span>
-		</h2>
-		<div class="ksearchresult-desc km">
-			<span><?php echo JText::sprintf ('COM_KUNENA_FORUM_SEARCH', $this->escape($this->state->get('searchwords')) ); ?></span>
+	
+			
+	
+		<div>
+	<h1bai>
+<span><?php echo JText::_('COM_KUNENA_SEARCH_RESULTS'); ?>&nbsp;&nbsp;|</span>&nbsp;&nbsp;
+<span><?php echo JText::sprintf ('COM_KUNENA_FORUM_SEARCH', $this->escape($this->state->get('searchwords')) ); ?></span>
+
+	</h1bai>
 		</div>
 	</div>
 	<div class="kcontainer" id="ksearchresult">
