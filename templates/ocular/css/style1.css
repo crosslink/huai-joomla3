@@ -1,0 +1,292 @@
+/**
+ * @version		1.0.0
+ * @package		JoomlaXTC Ocular for Joomla! 2.5.x
+ * @author		JoomlaXTC http://www.joomlaxtc.com
+ * @copyright	Copyright (C) 2014 Monev Software LLC. All rights reserved.
+ * @license		http://www.joomlaxtc.com/license JoomlaXTC Proprietary Use License
+ */
+/* ----------------------------------------------*/
+/* B 00 - Body
+/* ----------------------------------------------*/
+body.frontpage {background:<?php echo $params->bodybg;?><?php if ($params->bodybgimg != "-1"){?> url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->bodybgimg; ?>') <?php echo $params->bodybgposition;?><?php } ?>;color:<?php echo $params->body_color;?>;}
+.com_users {background:<?php echo $params->bodybg;?><?php if ($params->bodybgimg != "-1"){?> url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->bodybgimg; ?>') <?php echo $params->bodybgposition;?><?php } ?>;color:<?php echo $params->body_color;?>;}
+body.innerpage {background:<?php echo $params->bodybgsub;?> <?php if ($params->bodybgimgsub != "-1"){?> url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->bodybgimgsub; ?>') <?php echo $params->bodybgpositionsub;?><?php } ?>!important;color:<?php echo $params->body_color;?>;background-size:cover!important;}
+/* ----------------------------------------------*/
+/* B 01 - Heading,links and titles
+/* ----------------------------------------------*/
+.contentheading {color:<?php echo $params->conHead_color;?>;}
+.componentheading,.componentheadingnowrap,.pagetitle,span.subheading-category {color:<?php echo $params->comHead_color;?>;}
+.loginpagetitle  {color:<?php echo $params->basecolor2;?>}
+a,input.button {color:<?php echo $params->link_color;?>;}
+a:hover {color:<?php echo $params->linkhover_color;?>;}
+a:active {color:<?php echo $params->linkactive_color;?>;}
+h1 {color:<?php echo $params->h1_color;?>;}
+h2 {color:<?php echo $params->h2_color;?>;}
+h3 {color:<?php echo $params->h3_color;?>;}
+h4 {color:<?php echo $params->h4_color;?>;}
+h5 {color:<?php echo $params->h5_color;?>;}
+h6 {color:<?php echo $params->h6_color;?>;}
+/* ----------------------------------------------*/
+/* B 02 - Basecolor styles, used in JXTC Walls and 3rd party components
+/* ----------------------------------------------*/
+.basecolor_1 {color:<?php echo $params->basecolor1;?>;}
+.basecolor_2 {color:<?php echo $params->basecolor2;?>;}
+.basecolor_3 {color:<?php echo $params->basecolor3;?>;}
+.basecolor_4 {color:<?php echo $params->basecolor4;?>;}
+.basecolor_5 {color:<?php echo $params->basecolor5;?>;}
+.basecolor_6 {color:<?php echo $params->basecolor6;?>;}
+.basecolor_7 {color:<?php echo $params->basecolor7;?>;}
+.basecolor_8 {color:<?php echo $params->basecolor8;?>;}
+/* ----------------------------------------------*/
+/* G 00 - Header,logo,menu
+/* ----------------------------------------------*/
+#headertop {background:#000;}
+#headerwrap {background:<?php echo $params->headerwrap; ?> <?php if ($params->headerwrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->headerwrapimage; ?>') <?php echo $params->headerwrapposition; ?><?php }?>;}
+#header{background:<?php echo $params->header; ?> <?php if ($params->headerimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->headerimage; ?>') <?php echo $params->headerposition; ?><?php }?>;}
+#headerwrap .topmodules {background:red!important;}
+#logo a{background:<?php if ($params->logoImg != "-1"){?>url(<?php echo $imgpath; ?>/logos/<?php echo $params->logoImg; ?>) no-repeat 0 0<?php }?>;height: <?php echo $params->logoheight;?>px;width:<?php echo $params->logowidth;?>px;margin:<?php echo $params->logopadding; ?>;}
+#search input{-moz-box-shadow: -1px -1px 0px rgba(0,0,0,0.3), 1px 1px 0px rgba(255,255,255,0.075); -webkit-box-shadow: -1px -1px 0px rgba(0,0,0,0.3), 1px 1px 0px rgba(255,255,255,0.075); box-shadow: -1px -1px 0px rgba(0,0,0,0.3), 1px 1px 0px rgba(255,255,255,0.075);}
+.topsearch .sb-search-input input {background:#ebebeb!important;}
+/* XTC Menu */
+#menuwrap {background: <?php echo $params->toplevelwrapbgcolor;?>;}
+#menu {background: <?php echo $params->toplevelbgcolor;?>;}
+/* Top Level */
+#menuwrap ul.menu > li,span.separator {background-color: <?php echo $params->toplevelabgcolor;?>!important;}
+#menuwrap ul.menu > li a,span.separator {color:<?php echo $params->topleveltxtcolor;?>!important;}
+#menuwrap ul.menu > li.deeper.parent.xtcHover,#menuwrap ul.menu > li:hover {background-color: <?php echo $params->toplevelahoverbgcolor;?>!important;z-index:999999999999!important;position:relative!important;}
+#menuwrap ul.menu > li:hover a {color:<?php echo $params->topleveltxthovercolor;?>!important;}
+#menuwrap ul.menu > li.active {background-color: <?php echo $params->toplevelaactivebgcolor;?>!important;}
+#menuwrap ul.menu > li.deeper.parent.active {background-color: <?php echo $params->toplevelaactivebgcolor;?>!important;}
+#menuwrap ul.menu > li.deeper.parent.active.xtcHover {background-color: <?php echo $params->toplevelahoverbgcolor;?>!important;}
+#menuwrap ul.menu > li.active a{color:<?php echo $params->topleveltxtactivecolor;?>!important;}
+/* Drop Level */
+#menuwrap ul.menu li.parent > ul {background-color: <?php echo $params->droplevelbgcolor;?>!important;}
+#menuwrap ul.menu li.parent > ul > li {text-align:left; background: <?php echo $params->droplevelabgcolor;?>!important;}
+#menuwrap ul.menu li.parent > ul > li > a {color:<?php echo $params->dropfont_color;?>!important;}
+#menuwrap ul.menu li.parent > ul > li:hover {background:<?php echo $params->droplevelahoverbgcolor;?>!important;}
+#menuwrap ul.menu li.parent > ul > li > a:hover {color:<?php echo $params->dropfonthover_color;?>!important;}
+#menuwrap ul.menu li.parent > ul > li.active {background: <?php echo $params->droplevelaactivebgcolor;?>!important;}
+#menuwrap ul.menu li.parent > ul > li.active:hover {background: <?php echo $params->droplevelaactivebgcolor;?>!important;}
+#menuwrap ul.menu li.parent > ul > li.active > a {color:<?php echo $params->dropfontactive_color;?>!important;}
+/* Side Menu */
+ul.menu.iconside li {text-align:left; background: linear-gradient(to left,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2) 50%,  
+<?php echo $params->droplevelahoverbgcolor;?> 50%, <?php echo $params->droplevelahoverbgcolor;?>);background-position: 100% 0;    background-size: 200% 100%;transition: all 3.8s ease-in;}
+ul.menu.iconside li:hover {background-position: 0 0;}
+/* ----------------------------------------------*/
+/* G 03 - Region 1
+/* ----------------------------------------------*/
+#region1wrap{background:<?php echo $params->region1wrap; ?> <?php if ($params->region1wrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region1wrapimage; ?>') <?php echo $params->region1wrapposition; ?><?php }?>;}
+#region1{background:<?php echo $params->region1; ?> <?php if ($params->region1image != "-1"){?>    url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region1image; ?>') <?php echo $params->region1position; ?><?php }?>;}
+/* ----------------------------------------------*/
+/* G 04 - Region 2
+/* ----------------------------------------------*/
+#region2wrap{background:<?php echo $params->region2wrap; ?> <?php if ($params->region2wrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region2wrapimage; ?>') <?php echo $params->region2wrapposition; ?>;<?php }?>; }
+#region2{background:<?php echo $params->region2; ?> <?php if ($params->region2image != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region2image; ?>') <?php echo $params->region2position; ?><?php }?>;}
+/* ----------------------------------------------*/
+/* G 05 - Region 3
+/* ----------------------------------------------*/
+#region3wrap{background:<?php echo $params->region3wrap; ?> <?php if ($params->region3wrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region3wrapimage; ?>') <?php echo $params->region3wrapposition; ?><?php }?>;}
+#region3{ background:<?php echo $params->region3; ?> <?php if ($params->region3image != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region3image; ?>') <?php echo $params->region3position; ?><?php }?>;}
+#component {background:<?php echo $params->region3com; ?>}
+#left {background:<?php echo $params->region3left; ?>}
+#right {background:<?php echo $params->region3right; ?>}
+/* ----------------------------------------------*/
+/* G 06 - Region 4
+/* ----------------------------------------------*/
+#region4wrap{background:<?php echo $params->region4wrap; ?> <?php if ($params->region4wrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region4wrapimage; ?>') <?php echo $params->region4wrapposition; ?><?php }?>;}
+#region4{background:<?php echo $params->region4; ?> <?php if ($params->region4image != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region4image; ?>') <?php echo $params->region4position; ?><?php }?>;}
+/* ----------------------------------------------*/
+/* G 07 - Region 5
+/* ----------------------------------------------*/
+#region5wrap{background:<?php echo $params->region5wrap; ?> <?php if ($params->region5wrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region5wrapimage; ?>') <?php echo $params->region5wrapposition; ?><?php }?>;}
+#region5{background:<?php echo $params->region5; ?> <?php if ($params->region5image != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region5image; ?>') <?php echo $params->region5position; ?><?php }?>; background-size:800px 800px;}
+/* ----------------------------------------------*/
+/* G 08 - Region 6
+/* ----------------------------------------------*/
+#region6wrap{background:<?php echo $params->region6wrap; ?> <?php if ($params->region6wrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region6wrapimage; ?>') <?php echo $params->region6wrapposition; ?><?php }?>;}
+#region6{background:<?php echo $params->region6; ?> <?php if ($params->region6image != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region6image; ?>') <?php echo $params->region6position; ?><?php }?>; }
+/* ----------------------------------------------*/
+/* G 09 - Region 7
+/* ----------------------------------------------*/
+#region7wrap{background:<?php echo $params->region7wrap; ?> <?php if ($params->region7wrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region7wrapimage; ?>') <?php echo $params->region7wrapposition; ?><?php }?>;}
+#region7{background:<?php echo $params->region7; ?> <?php if ($params->region7image != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region7image; ?>') <?php echo $params->region7position; ?><?php }?>;}
+/* ----------------------------------------------*/
+/* G 10 - Region 8
+/* ----------------------------------------------*/
+#region8wrap{background:<?php echo $params->region8wrap; ?> <?php if ($params->region8wrapimage != "-1"){?> url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region8wrapimage; ?>') <?php echo $params->region8wrapposition; ?><?php }?>;}
+#region8{background:<?php echo $params->region8; ?> <?php if ($params->region8image != "-1"){?> url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region8image; ?>') <?php echo $params->region8position; ?><?php }?>;}
+/* ----------------------------------------------*/
+/* G 11 - Region 9
+/* ----------------------------------------------*/
+#region9wrap{background:<?php echo $params->region9wrap; ?> <?php if ($params->region9wrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region9wrapimage; ?>') <?php echo $params->region9wrapposition; ?><?php }?>;}
+#region9{background:<?php echo $params->region9; ?> <?php if ($params->region9image != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region9image; ?>') <?php echo $params->region9position; ?><?php }?>;}
+/* ----------------------------------------------*/
+/* G 12 - Region 10
+/* ----------------------------------------------*/
+#region10wrap{background:<?php echo $params->region10wrap; ?> <?php if ($params->region10wrapimage != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region10wrapimage; ?>') <?php echo $params->region10wrapposition; ?><?php }?>;}
+#region10{background:<?php echo $params->region10; ?> <?php if ($params->region10image != "-1"){?>url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->region10image; ?>') <?php echo $params->region10position; ?><?php }?>;}
+/* ----------------------------------------------*/
+/* G 13 - Footerwrap
+/* ----------------------------------------------*/
+#footerwrap{background:<?php echo $params->footer; ?>;color:#222;}
+
+/* ----------------------------------------------*/
+/* S 00 - Module Suffixes
+/* ----------------------------------------------*/
+.module{background: <?php echo $params->modbkgcolor; ?>;}
+.module h3.moduletitle {background: <?php echo $params->modtitlebkgcolor; ?>;}
+.module h3 span.first_word,#community-wrap .app-box > h3, #community-wrap .app-box-footer a,#community-wrap .app-box-filter a,#community-wrap .cResetList 
+span.first_word {color:<?php echo $params->modtitlefirstword;?>;font-weight:bold;}
+span.rest{color:<?php echo $params->modtitlesecondword;?>;}
+.module h3 span.rest{color:<?php echo $params->modtitlesecondword;?>;}
+.basecolor5_box h3, .basecolor5_box h3 span, .basecolor5_box,.basecolor5_box .modulecontent,.basecolor5_box .modulecontent a {background:<?php echo $params->basecolor5;?>!important;}
+.basecolor6_box h3,.basecolor6_box h3 span,.basecolor6_box,.basecolor6_box .modulecontent,.basecolor6_box .modulecontent a {background:<?php echo $params->basecolor6;?>!important;}
+.basecolor7_box h3,.basecolor7_box h3 span,.basecolor7_box,.basecolor7_box .modulecontent,.basecolor7_box .modulecontent a {background:<?php echo $params->basecolor7;?>!important;}
+.basecolor8_box h3,.basecolor8_box h3 span,.basecolor8_box,.basecolor8_box .modulecontent,.basecolor8_box .modulecontent a {background:<?php echo $params->basecolor8;?>!important;}
+/* ----------------------------------------------*/
+/* C 00 - Content Overrides
+/* ----------------------------------------------*/
+.pagetitle, .pagetitle a {color:<?php echo $params->comHead_color;?>;}
+h2.cat_title a,h2.cat_title {color:<?php echo $params->catHead_color;?>;}
+.itemHeader h2.article_title a,.itemHeader h2.article_title  {color:<?php echo $params->conHead_color;?>!important;}
+legend {color:<?php echo $params->basecolor1;?> !important;}
+dt.result-title, dt.result-title a {color:<?php echo $params->basecolor1;?> !important; font-weight:normal;}
+.search_menu_btn:hover {color:#fff;background:<?php echo $params->basecolor1;?>;cursor:pointer;}
+.topsearch .sb-search-input {background:#fff!important;color:#333 !important;}
+.items-more h3 {color:<?php echo $params->basecolor1;?>!important;}
+.dropcap {color:<?php echo $params->basecolor1;?>!important;}
+div.itemFullText h3,.item-page h3 {color:<?php echo $params->basecolor1;?>;}
+.items-more ol {margin:0px!important;}
+.cat-item input[type="radio"] + label:hover {background:#333;color:#fff;}
+.cat-item input[type="radio"] + label:active {background:#923935;color:#fff;}
+
+/* ----------------------------------------------*/
+/* M 00 - Walls - Icon Articles Newspro
+/* ----------------------------------------------*/
+.iconarticle .iconimg img {background:<?php echo $params->basecolor6;?>!important; }
+
+/* ----------------------------------------------*/
+/* RESPONSIVE
+/* ----------------------------------------------*/
+/* MOBILE */
+.mobilebtn {background: rgba(255,255,255,0.65) url('<?php echo $imgpath;?>/icons/menu-icon-dk.png') 50% 50% no-repeat!important;margin:0 0 0 -8px;}
+.mobilebtn select {background:#fff!important;}
+.mobiletools a {display:inline-block; width:30px; height:30px; background:rgba(255,255,255,0.65); color:#333;}
+<?php if ($templateParameters->group->grid->responsive) { ?>
+@media(max-width:<?php echo $params->bodymowidth;?>px ){
+body.frontpage {background:<?php echo $params->bodybgmb;?> <?php if ($params->bodybgimgmb != "-1"){?> url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->bodybgimgmb ?>') <?php echo $params->bodybgpositionmb;?>!important;<?php } ?>;color:<?php echo $params->body_color;?>;background-size:900px 900px!important;}
+body.innerpage {background:<?php echo $params->bodybgmb;?> <?php if ($params->bodybgimgsub != "-1"){?> url('<?php echo $imgpath; ?>/backgrounds/<?php echo $params->bodybgimgmb; ?>') <?php echo $params->bodybgpositionmb;?>!important;<?php } ?>color:<?php echo $params->body_color;?>;}
+}
+@media(max-width:<?php echo $params->logo2width;?>px ){
+#logo a{background:<?php if ($params->logoImg2 != "-1"){?>url(<?php echo $imgpath; ?>/logos/<?php echo $params->logoImg2; ?>) no-repeat 0 0<?php }?>;height: <?php echo $params->logoheight2;?>px;width:<?php echo $params->logowidth2;?>px!important;margin:<?php echo $params->logopadding2; ?>!important;}}
+@media(max-width:<?php echo $params->region1mowidth;?>px ){
+<?php if ($params->region1mo=="2") { ?>	
+/* ----------------------------------------------*/
+/* L 01 - Region 1
+/* ----------------------------------------------*/
+#region1wrap{background:<?php echo $params->region1wrap; ?> <?php if ($params->region1wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region1wrapimage; ?>') <?php echo $params->region1wrapposition; ?><?php } ?>; }
+#region1{background:<?php echo $params->region1; ?> <?php if ($params->region1image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region1image; ?>') <?php echo $params->region1position; ?><?php } ?>; }
+<?php } ?> <?php if ($params->region1mo=="0") { ?> #region1wrap,#region1 {background-image:none!important;} <?php } ?>}
+/* ----------------------------------------------*/
+/* L 02 - Region 2
+/* ----------------------------------------------*/
+@media(max-width:<?php echo $params->region2mowidth;?>px ){
+<?php if ($params->region2mo=="2") { ?>	
+#region2wrap{background:<?php echo $params->region2wrap; ?> <?php if ($params->region2wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region2wrapimage; ?>') <?php echo $params->region2wrapposition; ?>;<?php } ?>; }
+#region2{background:<?php echo $params->region2; ?> <?php if ($params->region2image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region2image; ?>') <?php echo $params->region2position; ?><?php } ?>; }
+<?php } ?> <?php if ($params->region2mo=="0") { ?> #region2wrap,#region2 {background-image:none;} <?php } ?> }
+@media(max-width:<?php echo $params->region3mowidth;?>px ){
+<?php if ($params->region3mo=="2") { ?>	
+/* ----------------------------------------------*/
+/* L 03 - Region 3
+/* ----------------------------------------------*/
+#region3wrap{background:<?php echo $params->region3wrap; ?> <?php if ($params->region3wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region3wrapimage; ?>') <?php echo $params->region3wrapposition; ?>;<?php } ?>; }
+#region3wrapnoimg{background:<?php echo $params->region3wrap; ?>;}
+#region3{ background:<?php echo $params->region3; ?> <?php if ($params->region3image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region3image; ?>') <?php echo $params->region3position; ?><?php } ?>; } <?php } ?> <?php if ($params->region3mo=="0") { ?>	
+#region3wrap,#region3 {background-image:none;} <?php } ?>
+} 
+@media(max-width:<?php echo $params->region4mowidth;?>px ){
+<?php if ($params->region4mo=="2") { ?>	
+/* ----------------------------------------------*/
+/* L 04 - Region 4
+/* ----------------------------------------------*/
+#region4wrap{background:<?php echo $params->region4wrap; ?> <?php if ($params->region4wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region4wrapimage; ?>') <?php echo $params->region4wrapposition; ?>;<?php } ?>; }
+#region4{background:<?php echo $params->region4; ?> <?php if ($params->region4image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region4image; ?>') <?php echo $params->region4position; ?><?php } ?>; }
+<?php } ?>
+<?php if ($params->region4mo=="0") { ?>	
+#region4wrap,#region4 {background-image:none;}
+<?php } ?> 
+} 
+@media(max-width:<?php echo $params->region5mowidth;?>px ){
+<?php if ($params->region5mo=="2") { ?>	
+/* ----------------------------------------------*/
+/* L 05 - Region 5
+/* ----------------------------------------------*/
+#region5wrap{background:<?php echo $params->region5wrap; ?> <?php if ($params->region5wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region5wrapimage; ?>') <?php echo $params->region5wrapposition; ?>;<?php } ?>; }
+#region5{background:<?php echo $params->region5; ?> <?php if ($params->region5image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region5image; ?>') <?php echo $params->region5position; ?><?php } ?>; }
+<?php } ?>
+<?php if ($params->region5mo=="0") { ?>	
+#region5wrap,#region5 {background-image:none;}
+<?php } ?> 
+} 
+@media(max-width:<?php echo $params->region6mowidth;?>px ){
+<?php if ($params->region6mo=="2") { ?>	
+/* ----------------------------------------------*/
+/* L 06 - Region 6
+/* ----------------------------------------------*/
+#region6wrap{background:<?php echo $params->region6wrap; ?> <?php if ($params->region6wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region6wrapimage; ?>') <?php echo $params->region6wrapposition; ?>;<?php } ?>; }
+#region6{background:<?php echo $params->region6; ?> <?php if ($params->region6image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region6image; ?>') <?php echo $params->region6position; ?><?php } ?>; }
+<?php } ?>
+<?php if ($params->region6mo=="0") { ?>	
+#region6wrap,#region6 {background-image:none;}
+<?php } ?>
+} 
+@media(max-width:<?php echo $params->region7mowidth;?>px ){
+<?php if ($params->region7mo=="2") { ?>	
+/* ----------------------------------------------*/
+/* L 07 - Region 7
+/* ----------------------------------------------*/
+#region7wrap{background:<?php echo $params->region7wrap; ?> <?php if ($params->region7wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region7wrapimage; ?>') <?php echo $params->region7wrapposition; ?>;<?php } ?>; }
+#region7{background:<?php echo $params->region7; ?> <?php if ($params->region7image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region7image; ?>') <?php echo $params->region7position; ?><?php } ?>; }
+<?php } ?>
+<?php if ($params->region7mo=="0") { ?>	
+#region7wrap,#region7 {background-image:none;}
+<?php } ?>
+}
+@media(max-width:<?php echo $params->region8mowidth;?>px ){
+<?php if ($params->region8mo=="2") { ?>	
+/* ----------------------------------------------*/
+/* L 08 - Region 8
+/* ----------------------------------------------*/
+#region8wrap{background:<?php echo $params->region8wrap; ?> <?php if ($params->region8wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region8wrapimage; ?>') <?php echo $params->region8wrapposition; ?><?php } ?>; }
+#region8{background:<?php echo $params->region8; ?> <?php if ($params->region8image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region8image; ?>') <?php echo $params->region8position; ?><?php } ?>; }
+<?php } ?>
+<?php if ($params->region8mo=="0") { ?>	
+#region8wrap,#region8 {background-image:none;}
+<?php } ?> 
+}
+@media(max-width:<?php echo $params->region9mowidth;?>px ){
+<?php if ($params->region9mo=="2") { ?>		
+/* ----------------------------------------------*/
+/* L 09 - Region 9
+/* ----------------------------------------------*/
+#region9wrap{background:<?php echo $params->region9wrap; ?> <?php if ($params->region9wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region9wrapimage; ?>') <?php echo $params->region9wrapposition; ?>;<?php } ?>; }
+#region9{background:<?php echo $params->region9; ?> <?php if ($params->region9image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region9image; ?>') <?php echo $params->region9position; ?><?php } ?>; }
+<?php } ?>
+<?php if ($params->region9mo=="0") { ?>	
+#region9wrap,#region9 {background-image:none;}
+<?php } ?>
+}
+@media(max-width:<?php echo $params->region9mowidth;?>px ){
+<?php if ($params->region9mo=="2") { ?>		
+/* ----------------------------------------------*/
+/* L 10 - Region 10
+/* ----------------------------------------------*/
+#region10wrap{background:<?php echo $params->region10wrap; ?> <?php if ($params->region10wrapimage!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region10wrapimage; ?>') <?php echo $params->region10wrapposition; ?>;<?php } ?>; }
+#region10{background:<?php echo $params->region10; ?> <?php if ($params->region10image!= "-1") {?> url('<?php echo $imgpath; ?>/backgrounds/mobile_<?php echo $params->region10image; ?>') <?php echo $params->region10position; ?><?php } ?>; }
+<?php } ?>
+<?php if ($params->region10mo=="0") { ?>	
+#region10wrap,#region10 {background-image:none;}
+<?php } ?>
+}
+<?php } ?>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<name>CSS3 Effects</name>
+	<description>Parameters for CSS3 effects</description>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="css3hoverfx" type="radio" class="btn-group" default="1" label="CSS3 Hover Effect" description="CSS3 Hover Effects for Colors etc">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+			</field>
+			<field name="hovertp" type="text" default="all" label="Hover Transition Property" description="Property - all,background,color etc"/>
+			<field name="hoverfadespeed" type="text" default="0.15s" label="Hover Effect Speed" description="Speed of effect in ms"/>
+			<field name="hovertf" type="text" default="ease-in,ease-out" label="Hover Timing Function" description="Effect Timing Function - ease-in,ease-out, etc"/>
+			<field name="rsanimation" type="radio" class="btn-group" default="0" label="CSS3 Responsive Animation" description="Animate CSS3 Breakpoints">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+			</field>
+			<field name="css3animatedblog" type="radio" class="btn-group" default="0" label="CSS3 Component Animation" description="Animate Region 3 Component">
+				<option value="0">No</option>
+				<option value="1">Yes</option>
+			</field>
+			<field name="css3animatedstyle" type="list" default="up" label="CSS3 Component Style" description="Animated Region 3 Style">
+				<option value="up">Up</option>
+				<option value="down">Down</option>
+				<option value="left">Left</option>
+				<option value="right">Right</option>
+				<option value="fade">Fade</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>

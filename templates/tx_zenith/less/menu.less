@@ -1,0 +1,171 @@
+/* Component - Mega menu
+========================================================================== */
+// Dimension
+@menu-line-height: 30px;
+@menu-padding-horizontal: 10px;
+@menu-font-size: 12px;
+@menu-font-weight: normal;
+
+// Style
+@menu-color: #fff;
+@menu-hover-background: '';
+@menu-hover-color: #fff;
+@menu-onclick-background: @menu-hover-background;
+@menu-onclick-color: @menu-hover-color;
+@menu-active-background: @menu-hover-background;
+@menu-active-color: @menu-hover-color;
+@menu-subtitle-font-size: 10px;
+@menu-subtitle-offset: 7px;
+
+// Level 1
+@menu-level1-item-background: @menu-hover-background;
+
+// Dropdown
+@dropdown-z-index: 1000;
+@dropdown-background: #333;
+
+// Animation - Located on animation.less file
+@dropdown-animation: flipin-x;
+@dropdown-animation-nested: slide-bottom-fixed;
+
+/* Component - Split menu
+========================================================================== */
+@split-h-item-hover-background: @menu-hover-background;
+@split-h-hover-color: @menu-hover-color;	
+@split-h-dropdown-background: @dropdown-background;
+@split-h-level1-hover-background : @menu-level1-item-background;
+@split-h-level1-hover-color : @menu-hover-color;
+
+/* Component - Offcanvas
+========================================================================== */
+// Off-canvas
+@offcanvas-z-index:	1010;
+@offcanvas-background:	rgba(0,0,0,0.3);
+@offcanvas-bar-width:	270px;
+@offcanvas-bar-background:	#333;
+
+@offcanvas-item-color: #88898E;
+@offcanvas-item-hover-color: #3A3B40;
+@offcanvas-l1-item-color: rgba(255, 255, 255, 0.8);
+@offcanvas-l1-item-background: #3A3B40;
+@offcanvas-l1-item-active-color: #fff;
+
+
+// Import Base Menu component with Offcanvas
+@import "../../../libraries/expose/interface/less/menu.less";
+
+/* Override block with menu specific selector */
+.widget-menu {padding: 0 15px;}
+
+
+/* Implement hooks
+========================================================================== */
+// Menu Wrapper
+.hook-menu() {
+	color: @menu-color;position: relative; z-index: 99; font-family: 'Lato', sans-serif; background: #333;
+
+	ul > li.last > a {margin-bottom: 0;}
+}
+
+// Menu Item - Implement on all <a>
+.hook-menu-item() {
+	margin-bottom: 5px;padding: 2px @menu-padding-horizontal;background: #222222; 
+	border: 1px solid #333333; .transition(background-color 0.3s ease-out 0s);
+}
+// Hover
+.hook-menu-item-hover() {}
+// OnClick
+.hook-menu-item-onclick() {}
+// Active
+.hook-menu-item-active() {}
+
+// Icon font
+.hook-menu-icon() {}
+.hook-menu-icon-hover() {}
+
+// Modifier: Level 1 - Siblings of ul.l1
+//================================================================
+.hook-menu-level1() {
+    &:hover > a,
+    &.active > a{ background: @menu-level1-item-background; }
+
+    > a {
+    	margin-bottom: 0;padding: 5px 15px;border-style: solid;border-color: #000;border-width: 0 1px 0 0;
+    	.box-shadow(1px 0px 0px 0px #555); text-transform: uppercase; background: none;
+    } 
+}
+
+// Component - Dropdown
+// Do not apply margin/padding here use Column instead
+//===============================================================
+.hook-menu-dropdown() {
+	ul > li.grouped > a {margin-bottom: 0;}
+
+	.block {padding: 0;margin: 0;}
+}
+// Dropdown : Hover - Animation can be applied here
+.hook-menu-dropdown-hover() {}
+// Dropdown - Nested Hover - Animation can be applied here
+.hook-menu-nested-dropdown-hover() {}
+
+// Sub-objects: 'grouped'
+//==============================================================
+.hook-menu-grouped() {
+	> li > a {
+		background: url(../images/list-bullets.png) no-repeat 0 4px;border: 0;
+		line-height: 18px;padding-left: 16px;margin-bottom: 0;color: #d5d5d5;
+
+		&:hover {color: #fff;}
+	}
+	> li.active > a {color: #fff;}
+}
+
+// Sub-objects: 'column'
+// Apply padding/margin if needed
+//===============================================================
+.hook-menu-column() {
+    padding: 10px;
+}
+
+// Sub-objects: `Image`
+.hook-menu-item-image() {
+	margin-top: 0;
+}
+// Sub-objects: `Subtitle`
+.hook-menu-item-subtitle() {}
+
+/* Off-canvas hooks
+========================================================================== */
+.hook-offcanvas() {
+	.ex-menu li:hover > a, 
+	.ex-menu li > a:focus,
+	.ex-menu li.active > a {color: #fff;}
+}
+.hook-offcanvas-bar() {}
+.hook-offcanvas-block() {}
+
+/* Template Specific */
+.widget-splitmenu {
+	.box2;
+}
+
+#ex-splitmenu {
+	> .nav-list > li.parent > ul li {
+		list-style: circle;color: #aaa;
+		a {
+			border-bottom: 0;
+			&:hover {background: none;color: #444;}
+		}
+	}
+	[class^="icon-"]:before, [class*=" icon-"]:before {margin-right: 5px;}
+	li [class^="icon-"], li [class*=" icon-"], 
+	.nav li [class^="icon-"], .nav li [class*=" icon-"] {display: block;width: 100%;text-align: left;}
+}
+
+.menu-toggle {
+	color: #fff;
+	height: 35px;
+    padding: 0 10px;
+	background: rgba(0, 0, 0, 0.3);
+	&:hover, &:focus {color: #ddd;}
+}

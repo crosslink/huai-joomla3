@@ -1,0 +1,32 @@
+// PORTRAIT TABLET TO DEFAULT DESKTOP
+// ----------------------------------
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+  // Fixed grid
+  #grid > .core(62px, 0px);
+
+// Fluid grid
+  #grid > .fluid(@fluidGridColumnWidth768, @fluidGridGutterWidth768);
+
+  // Input grid
+  #grid > .input(62px, 00px);
+  //logo
+  #logo{font-size: 50px; text-align: center;}
+
+    .key-features{font-size: 30px;}
+    
+    #component .title {font-size: 35px;}
+
+    #bottom .title, .title{font-size: 15px;}
+
+     /* K2 Styles */
+    #k2Container.itemView,div.userItemView,div.tagItemView {padding-left: 0;}
+    div.catItemView {margin-left: 0;}
+    div.item-xtra-info {position: relative;width: auto;}
+
+    //Menu
+    #menu ul.level-0 > li.mega > a.mega, #menu ul.level-0 > li.mega > span.mega{ border-right: 0 }
+    #menu li.mega .childcontent{ border: 0; }
+
+}

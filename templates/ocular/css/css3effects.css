@@ -1,0 +1,308 @@
+/**
+ * @version		1.0.0
+ * @package		JoomlaXTC Ocular for Joomla! 2.5.x
+ * @author		JoomlaXTC http://www.joomlaxtc.com
+ * @copyright	Copyright (C) 2014 Monev Software LLC. All rights reserved.
+ * @license		http://www.joomlaxtc.com/license JoomlaXTC Proprietary Use License
+ */
+/* ----------------------------------------------*/
+/* C 00 - CSS3 Hover Effects
+/* ----------------------------------------------*/
+<?php if ($params->css3hoverfx) { ?>
+.moreslide:hover, #menuwrap ul.menu li.parent > ul,#menuwrap ul.menu li.parent > ul > li,.contactbutton, .search_menu_btn, .social a,.ca-main,ul.menu.iconside li,ul.menu.iconside li:hover,.info:hover,.article_header,.article_header span, .article_text,.itemImageGallery .imagegalleryplg img,.opac,.eventwrap img,.buttonleft,.buttonright,.buttonright a:hover,.buttonleft a:hover,.newswrap h4.newswrapmore a,.newswrap h4.newswrapmore,.catItemImage img:hover,.catItemImage:hover,.imagepe img:hover,.newitemwrap, a.article-intro-btn, .categorywrap .main, .categorywrap .more, .articletext .morelink, .articletext .morelink:hover, .categorywrap-right .main .articlemain .morelink, .categorywrap-right .main .articlemain .morelink:hover, .categorywrap-left .main .articlemain .morelink, .categorywrap-left .main .articlemain .morelink:hover,.categorywrap-right .more .articlemore:hover, .categorywrap-right .more .articlemore, .categorywrap-left .more .articlemore, .categorywrap-left .more .articlemore:hover, #header ul.menu > li > a,.orderlist {
+	     -webkit-transition-property: <?php echo $params->hovertp;?>;
+		-moz-transition-property: <?php echo $params->hovertp;?>;
+		-o-transition-property: <?php echo $params->hovertp;?>;
+		-ms-transition-property: <?php echo $params->hovertp;?>;
+		transition-property: <?php echo $params->hovertp;?>;
+		-webkit-transition-duration: <?php echo $params->hoverfadespeed;?>,<?php echo $params->hoverfadespeed;?>;
+		-moz-transition-duration: <?php echo $params->hoverfadespeed;?>,<?php echo $params->hoverfadespeed;?>;
+		-o-transition-duration: <?php echo $params->hoverfadespeed;?>,<?php echo $params->hoverfadespeed;?>;
+		-ms-transition-duration: <?php echo $params->hoverfadespeed;?>, <?php echo $params->hoverfadespeed;?>;
+		transition-duration: <?php echo $params->hoverfadespeed;?>, <?php echo $params->hoverfadespeed;?>;
+		-webkit-transition-timing-function: <?php echo $params->hovertf;?>;
+		-moz-transition-timing-function: <?php echo $params->hovertf;?>;
+		-o-transition-timing-function: <?php echo $params->hovertf;?>;
+		-ms-transition-timing-function: <?php echo $params->hovertf;?>;
+		transition-timing-function: <?php echo $params->hovertf;?>;
+	}
+<?php } ?>
+
+
+/* ----------------------------------------------*/
+/* C 01 - CSS3 Animated Component
+/* ----------------------------------------------*/
+<?php if ($params->css3animatedblog) { ?>
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}
+.animated1{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:0.7s;-moz-animation-duration:0.7s;-ms-animation-duration:0.7s;-o-animation-duration:0.7s;animation-duration:0.7s;
+-moz-animation-delay:0.5s; -webkit-animation-delay:0.5s; -0-animation-delay:0.5s; animation-delay:0.5s;
+-webkit-transition-timing-function: cubic-bezier(0.065, 0.125, 0.185, 0.980);
+   -moz-transition-timing-function: cubic-bezier(0.065, 0.125, 0.185, 0.980);
+     -o-transition-timing-function: cubic-bezier(0.065, 0.125, 0.185, 0.980);
+        transition-timing-function: cubic-bezier(0.065, 0.125, 0.185, 0.980);}
+.animated.hinge{-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}
+
+<?php 
+	switch ($params->css3animatedstyle) {
+	case 'up':
+	$translate='Y';
+	$translatepx='1000px';
+	break;
+	case 'down':
+	$translate='Y';
+	$translatepx='-2000px';
+	break;
+	case 'right':
+	$translate='X';
+	$translatepx='-2000px';
+	break;
+	case 'left':
+	$translate='X';
+	$translatepx='2000px';
+	break;
+	case 'fade':
+	$translate='X';
+	$translatepx='0px';
+	break;
+} ?>
+
+@-webkit-keyframes anistyle {
+0%   {opacity: 0; -webkit-transform: translate<?php echo $translate;?> (<?php echo $translatepx;?>);}
+100% {opacity: 1;-webkit-transform: translate<?php echo $translate;?>(0);}
+}
+		
+@-moz-keyframes anistyle {
+0% {opacity: 0;	-moz-transform: translate<?php echo $translate;?>(<?php echo $translatepx;?>);}
+100% {opacity: 1;-moz-transform: translate<?php echo $translate;?>(0);}
+}
+	
+@-o-keyframes anistyle {
+0% {opacity: 0;	-o-transform: translate<?php echo $translate;?>(<?php echo $translatepx;?>);}
+100% {opacity: 1;-o-transform: translate<?php echo $translate;?>(0);}
+}
+	
+@keyframes anistyle {
+0% {opacity: 0;transform: translate<?php echo $translate;?>(<?php echo $translatepx;?>);}
+100% {opacity: 1;transform: translate<?php echo $translate;?>(0);}
+}
+	
+.anistyle {
+-webkit-animation-name: anistyle;
+-moz-animation-name: anistyle;
+-o-animation-name: anistyle;
+animation-name: anistyle;
+}	
+<?php } ?>
+
+/* ----------------------------------------------*/
+/* C 03 - CSS3 Responsive Animations
+/* ----------------------------------------------*/
+<?php if ($params->rsanimation) { ?>	
+.span1,.span2,.span3,.span4,.span5,.span6,.span7,.span8,.span9,.span10,.span11,.span12
+ {
+ -webkit-animation-fill-mode:forwards;  
+    -moz-animation-fill-mode:forwards;
+         animation-fill-mode:forwards;
+     -webkit-animation-duration:1s;
+        -moz-animation-duration:1s;
+             animation-duration:1s;
+	 -webkit-transition: width 0.8s ease-in-out;
+	    -moz-transition: width 0.8s ease-in-out;
+          -o-transition: width 0.8s ease-in-out;
+             transition: width 0.8s ease-in-out;
+}
+<?php } ?>
+/* ----------------------------------------------*/
+/* C 05 - Responsive Media Breakpoints
+/* ----------------------------------------------*/
+/* RESPONSIVE PARAMETERS */
+<?php if ($templateParameters->group->grid->responsive) { ?>
+/*  Mobile Device Breakpoints */
+
+
+@media(max-width:1400px){
+.constrainmod {padding-top: 0;}
+}
+@media(max-width:1280px){
+/* Joomla Content Padding and Margin Adjustments*/
+#region2wrap .xtc-wrapper, #region4wrap .xtc-wrapper, #region5wrap .xtc-wrapper, #region8wrap .xtc-wrapper, #region9wrap .xtc-wrapper {padding:30px!important}
+#region3wrap .xtc-wrapper {padding:30px!important;} 
+#left .module, #right .module {margin: 0px!important} 
+.customarticletext {width:85%!important;}
+p.btmaddress {margin-left:80px}
+}
+@media(max-width:1140px){
+	/*
+.textlarge1 {font-size:38px!important;}
+.mainslide-header img {max-width:50%!important;}
+*/
+.searchlarge .inputbox {max-width: 640px !important;}
+.mailsmall p.fieldacyemail {width: 70%!important;float: left!important;}
+.mailsmall .acysubbuttons {width: 20%!important; float: left!important;}
+@media(max-width:1080px){
+.suckerfish ul.menu > li, .dualfish ul.menu > li {margin: 0px 0px 0px 16px!important;padding: 10px 0px 6px 16px!important;}
+.customarticletext {padding:30px 0 0 50px; width:85%!important;}
+span.symbol {padding-left:0px;}
+}
+@media screen and (max-width: 980px){
+/* Joomla Content Padding and Margins */
+.leftlarge .items-leading .span6,.leftlarge .items-leading .span3{width:100%;margin-left:0;}
+.leftlarge .items-leading div:first-child + div{margin-left:0;}
+.rightlarge .items-leading .span6,.rightlarge .items-leading .span3{width:100%;margin-left:0;}
+.centerlarge .items-leading .span6,.centerlarge .items-leading .span3{width:100%;margin-left:0;}
+.centerlarge .items-leading div:first-child + div + div{margin-left:0;}
+.customarticletext {padding:10px 0 0 50px; width:88%!important;}
+}
+@media screen and (max-width: 900px){
+#headerwrap .xtc-wrapper {padding: 14px 10px !important;}
+body.sticky {margin-top: 120px!important;}
+body.innerpage.sticky{margin-top: 160px!important;}
+#headerwrap {margin-bottom: 0!important;}
+#menuwrap {float:right!important;}
+.mobilebtn {margin: 0px!important; position:relative!important;}
+.xtc-bodygutter{padding:0 1.5%!important;}
+/* Full Width Span Breakpoint */
+.row-fluid [class*="span"] {display: block; width: 100%;margin-left: 0;}
+#region4wrap  .xtc-wrapper {padding: 20px!important;}
+h3.moduletitle {text-align:center; padding-left:0!important;}
+.pad50 h3.moduletitle {text-align:center; padding-left:0!important;}
+#region9 .span8 {border: none !important; margin: 0!important;}
+#right9 {border-left:none!important;}
+.footerpt, .footerp {text-align:center!important;}
+/* Image Gallery Plugin Width Adjustment */
+.imagegalleryplg img {width:33%!important;}
+/* Search Field Resize */
+input#mod-search-searchword.inputbox {width:100%!important;}
+/* Contact Module Center */
+div.contactwrap {text-align:center;}
+/* Footer Module Center */
+#footer {text-align:center;}
+/* Custom Html */
+p.btmaddress {text-align:center;}
+.cakewrap {text-align:center!important; margin-top:20px;}
+.customarticletext {padding:10px 40px 0; width:88%!important; margin:0 auto!important; text-align:center;}
+/* AcyMailing */
+.searchlarge .acymailing_modulesearchlarge {padding: 30px 0px 55px!important;}
+.acymailing_module_form .acymailing_introtext {line-height: 100%!important;}
+.searchlarge .acymailing_introtext p {margin: 15px 0 !important; line-height:133%!important;}
+.searchlarge .btn {margin-top: 20px !important; font-size: 16px !important; padding: 16px 32px 15px !important;}
+ul.menubottom {padding: 0px 0px 20px !important;}
+.menubottom li {padding-bottom: 0!important; margin-bottom: 0!important;}
+p.btmaddress {margin:0px auto;}
+#component {margin-bottom:80px;}
+}
+@media (max-width: 800px) {
+/* Deluxe NewsPro Adjustments  */
+.articleleft, .articleright, .articleleft p, .articleright p {float:none!important;text-align:center!important;width:90%!important; margin:0 auto!important;}
+DL.search-results {width:95%;}
+.search-searchword {display:none!important;}
+.search .button {margin-top:12px!important;}
+.floatleft {float:left!important;}
+/* AcyMailing */
+.searchlarge .inputbox {max-width: 85% !important;}
+.searchlarge .acymailing_modulesearchlarge {padding: 20px 10px 46px !important;}
+}
+@media (max-width: 768px) {
+/* Joomla Article */
+
+#component p {font-size: 16px!important;}
+/* Joomla Search Text Align, Padding and Resize Adjustments */
+.formwrap,form#finder-search {text-align:left; padding:10px;width:80%; }
+.formwrap, form#finder-search {width:100%!important;}
+/* Image Gallery Resize */
+.imagegalleryplg img {width:50%!important;}
+.contactwrap {margin: 0px 10px!important;}
+#region3wrap .xtc-wrapper {padding:15px!important;}
+/* Module Suffix CSS */
+.pad50 .modulecontent {padding: 30px!important;}
+
+}
+@media(max-width:660px){
+.fontawesome-icon-list div {width:45%;}
+/* AcyMailing */
+.searchlarge .acymailing_introtext {font-size: 28px!important;}
+}
+@media(max-width:620px){
+/* Joomla Category Blog Pagination Hide */
+.pagination-start,.pagination-end,.pagination-prev,.pagination-next {display:none!important;}
+/* Global Component H1,H2,H3,H4,H5,H6 Resize */
+#region1wrap .xtc-wrapper {padding:0!important;}
+.img-fulltext-left, .article-full-left {float:none!important; width:100%!important}
+.article-full-left .article_infos {text-align:center!important;}
+.sectiontableentry1 {background:none!important;padding:20px;border:1px solid #ccc;margin-bottom:12px;}
+.sectiontableentry2 {background:none!important;padding:20px;border:1px solid #ccc;margin-bottom:12px;}
+.Pagination ul {padding: 9px 0px!important;}
+.iconarticletext p {margin-top:20px!important; font-size:14px!important;}
+/* Custom HTML */
+.customarticletext h4 {font-size: 48px!important;}
+.customarticletext {padding: 10px 30px 0px!important;} 
+/* AcyMailing */
+.mailsmall .acysubbuttons {width: auto !important;display: block !important;float: none !important;margin: 0 auto !important;}
+.mailsmall p.fieldacyemail {display: block !important;margin: 0px auto !important;width: 100% !important;float: none !important;}
+.mailsmall .inputbox {width: 96% !important; margin-right: 0!important; text-align: center!important;}
+.mailsmall {margin: 0 0 20px 0!important;}
+}
+
+@media(max-width:500px){
+/* Custom HTML */
+.customarticletext h4 {font-size: 32px!important;}
+.customarticletext p {font-size: 14px!important; margin: 18px 0px 22px!important;}
+}
+@media(max-width:480px){
+.xtc-leading .span6,.xtc-leading .span3,.xtc-intro .span3{float:none;width:100%;}
+/* Joomla Content Print & Email Button Adjustments */
+.cat-item div.action {position:relative!important;right:0px!important;bottom:0px;top:24px;}
+/* Custom HTML Inset Padding Adjustment */
+/* Joomla Content Navigation Padding and Margin Adjustments */
+div.itemNavigation {margin:0px!important;padding:0px!important;}
+.span12 .itemNav_pre,.span11 .itemNav_pre,.span10 .itemNav_pre, .span9 .itemNav_pre,.span8 .itemNav_pre,.span7 .itemNav_pre,.span6 .itemNav_pre,.span5 .itemNav_pre,.span4 .itemNav_pre,.span3 .itemNav_pre,.span2 .itemNav_pre,.span1 .itemNav_pre,	.span12 .itemNav_next,.span11 .itemNav_next,.span10 .itemNav_next, .span9 .itemNav_next,.span8 .itemNav_next,.span7 .itemNav_next,.span6 .itemNav_next,.span5 .itemNav_next,.span4 .itemNav_next,.span3 .itemNav_next,.span2 .itemNav_next,.span1 .itemNav_next {margin-left:0px!important;padding-right:0px;padding-left:0px;}
+.prevnext_style {margin-bottom:72px;}
+/* Joomla Page Title Font Resize */
+h1.pagetitle span {font-size:34px!important;}
+/* Region Padding Resize */	
+.articleright p, .articleleft p {font-size:16px!important;}	
+.articleright h2, .articleleft h2 {font-size:36px!important;margin-bottom:15px!important;}
+h1 {font-size:40px!important;}	
+.imagegalleryplg img {width:100%!important;}
+.btm_contactwrap h2 {font-size:34px!important;}
+.itemHeader h2.article_title a, .itemHeader h2.article_title, h2.cat_title, h2.cat_title a {font-size: 32px!important; padding: 0!important;}
+/* Custom HTML */
+.customarticletext {padding: 10px 6px 0px !important;width: 96% !important;}
+.footerpt,.footerp {padding-left:0px;padding-right:0px;}
+span.symbol {padding-left:0px!important;}
+}
+@media(max-width:450px){
+/* Joomla Article Title Adjustment */
+.jcatHeader h2 {font-size:32px!important;}
+/* Joomla Article */
+h2.article_title a, h2.article_title {font-size:26px!important;}
+.itemJFullText {padding:0px!important;}
+.itemJFullText h2 {font-size:22px!important;}
+/* Deluxe News Pro Mod */
+.iconarticles .firstcol, .iconarticles .centercol, .iconarticles .lastcol {
+	width: 100%!important;float:none!important; display:block!important;margin-left: 0!important;}
+}
+@media(max-width:380px){
+#region2wrap .xtc-wrapper, #region4wrap .xtc-wrapper, #region5wrap .xtc-wrapper, #region8wrap .xtc-wrapper, #region9wrap .xtc-wrapper {padding: 18px !important;}
+.loginformwrap {margin:30px auto 0!important; width:260px!important; padding:30px 0;  border:10px solid rgba(0,0,0,0.05);}
+td.key  {width:35px!important;}
+.pad50 .modulecontent, .modulecontent {padding: 18px!important;}
+.pad50 h3.moduletitle {padding: 24px 0px 0px 0px !important;}
+/* AcyMailing */
+.searchlarge .inputbox {max-width: 76% !important;padding: 16px !important;}
+.searchlarge .acymailing_introtext p {margin: 10px 0px 5px !important;}
+.searchlarge .btn {margin-top: 12px !important;}
+@media(max-width:360px){
+/* Custom HMTL */
+.customarticletext a.buttonrm {padding:16px 0!important; width:100%!important;}	
+.logintools a {padding: 0px 2px!important;}
+}
+@media(max-width:320px){
+/* Joomla Content Pagination Font Resize & Padding & Border Adjustments */
+div.pagination ul li {padding:0 4px 0 0;}
+/* Breadcrumbs Title Removal */
+.showHere {display:none;}
+.mobilebtn {margin: 0px 0px 0px -7px !important;}
+}
+/* End Responsive Parameters */
+<?php } ?>

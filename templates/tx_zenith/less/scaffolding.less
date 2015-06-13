@@ -1,0 +1,184 @@
+//Load Google webfont
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+
+//Font mixin
+.gfont-serif{ font-family: 'Gentium Book Basic', serif; }
+@font-primary: 'Lato', sans-serif;
+
+
+/*----------------------------------------
+       Common for general purpose
+-----------------------------------------*/
+body{
+    font-family: @font-primary;
+    color: #666;
+    font-size: 14px;
+    line-height: 25px;
+    margin: 0;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+a{
+  text-decoration: none;
+  .transition(all 0.2s linear)
+}
+
+h2,h3{
+  font-weight: 300;
+}
+
+.container{
+    background: @white;
+  .box-shadow(0 3px 10px rgba(0,0,0,0.3));
+}
+
+// block wrapper will not apply for tabs and accordion type
+// same css will applly on tab and accordion type
+.block,
+.tabbable,
+.accordion {padding: 15px; margin: 10px; position: relative; display: block;}
+.no-title > .header {display: none;}
+    .title{margin: 0 0 7px;padding: 0 0 7px;}
+* html .ie6-offset {margin-right: -4px;}
+
+/*Master head*/
+.master-head{
+  .btn-wrap{
+    #translucent > .background(#000, 0.4);
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent #ddd #ddd transparent;
+    padding: 10px;
+    margin: 20px 0;
+    display: inline-block;
+    min-width: 300px;
+  }
+  h3{ font-size: 20px;}
+}
+@media (max-width: 979px) {
+  .master-head .width-block{ float: none; width: 100%; text-align: center;}
+}
+@media (min-width: 980px) and (max-width: 1199px){
+  .master-head h3{ font-size: 18px; line-height: 24px;}
+}
+
+/*Header*/
+.page-header{border:none;}
+
+// Readmore and button
+.button,
+.readon,
+.readmore,.btn-primary,.btn{
+  display: inline-block;
+  padding: 5px 14px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  transition: background-color 0.2s ease-out 0s;
+  -moz-transition: background-color 0.2s ease-out 0s;
+  -webkit-transition: background-color 0.2s ease-out 0s;
+  -o-transition: background-color 0.2s ease-out 0s;
+  border: none;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  a, &:hover{
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  }
+}
+
+
+
+// Images
+// -------------------------
+
+// Rounded corners
+.img-rounded {
+  .border-radius(6px);
+}
+
+// Add polaroid-esque trim
+.img-polaroid {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.2);
+  .box-shadow(0 1px 3px rgba(0,0,0,.1));
+}
+
+// Perfect circle
+.img-circle {
+  .border-radius(500px); // crank the border-radius so it works with most reasonably sized images
+}
+
+/*--------------------------------------------------
+        Layout
+---------------------------------------------------*/
+
+//button color for additional buttons
+#login-form a.btn, .little-btn{background: #444;
+&:hover{background: #888; color: #000;}}
+
+//single page contact slider
+#component .contact .title a{font-size: 20px;}
+
+#mainbody, #sidebar-a, #sidebar-b{position: relative;}
+
+// Sidebar a/b grid inside grid
+#sidebar-a[class*='grid'] [class*='grid'],
+#sidebar-b[class*='grid'] [class*='grid']{ margin-left: 0; width: 100%;}
+
+#copyright .block{padding: 10px 15px;margin: 0;}
+
+/* Positions Specific
+----------------------------------*/
+
+
+#absolute{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+#roof{
+  .box-shadow(1px -2px 11px rgba(0,0,0,0.3) inset);
+
+  .widget-date,
+  .widget-fontresizer{ padding-top: 0; padding-bottom: 0;}
+
+}
+
+
+#sidebar-a:after,
+#sidebar-b:after{
+    border-style: solid;
+    border-color: #EEE;
+    content: '';
+    display: block;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#sidebar-a:after{border-width: 0 1px 0 0; .box-shadow(1px 0 1px #fff)}
+#sidebar-b:after{border-width: 0 0 0 1px; .box-shadow(-1px 0 1px #fff)}
+#sidebar-a, #sidebar-b{
+    .block{z-index:10;}
+}
+
+#footer-wrap{
+  border-top: 15px solid #EEE;
+  background: url('../images/backgrounds/geometric.jpg');
+}
+
+#copyright{
+  .box-shadow(0 -1px 0 #000);
+  border-top: 1px solid #4c4c4c;
+  padding-top: 15px;
+}

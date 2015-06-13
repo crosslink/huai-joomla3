@@ -1,0 +1,128 @@
+.clearfix,
+.clear {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after,
+.clear:before,
+.clear:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after,
+.clear:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  color: #517901;
+}
+a:hover {
+  color: #75AF00;
+  text-decoration: none;
+}
+::selection {
+  background: #517901;
+  color: #fff;
+}
+::-moz-selection {
+  background: #517901;
+  color: #fff;
+}
+.colorWhite {
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+body {
+  background: url(../../images/backgrounds/white_wall_hash.png) repeat 0 0;
+}
+.button,
+.readon,
+.readmore,
+.btn-primary {
+  background: #517901;
+}
+.button:hover,
+.readon:hover,
+.readmore:hover,
+.btn-primary:hover {
+  background: #75AF00;
+  color: #fff;
+}
+#roof {
+  background: url(../../images/backgrounds/noise.png) repeat 0 0 #517901;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+#roof a {
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+#footer-wrap {
+  color: #fff;
+}
+#footer-wrap ul {
+  list-style: none;
+  margin: 0;
+}
+#footer-wrap li a {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+#footer-wrap li a:hover {
+  color: #75AF00;
+}
+#footer-wrap p a {
+  color: #517901;
+}
+#footer-wrap p a:hover {
+  color: #75AF00;
+}
+.ex-menu li:hover > a,
+.ex-menu li > a:focus,
+.ex-menu li > a:active,
+.ex-menu li.active > a {
+  background: #75AF00;
+  border: 1px solid #517901;
+}
+.ex-menu ul.l1 > li:hover > a,
+.ex-menu ul.l1 > li.active > a {
+  background: #517901;
+}
+#mod-finder-searchform button.finder {
+  background-color: #517901;
+}
+.nav-list .active > a,
+.nav-list .active:hover > a,
+.nav-list > li > a:hover {
+  border-color: #679B00;
+}
+.title span {
+  color: #75AF00;
+}
+div.item-xtra-info .catItemDateCreated,
+div.item-xtra-info .itemDateCreated,
+div.item-xtra-info .userItemDateCreated,
+div.item-xtra-info .tagItemDateCreated {
+  background: #679B00;
+}
+div.k2Pagination ul li span,
+#component .pagination ul li span {
+  background: #679B00;
+}

@@ -306,7 +306,7 @@ class KunenaForumTopic extends KunenaDatabaseObject {
 	 * @return int
 	 */
 	public function getHits() {
-		return $this->hits;
+
 	}
 
 	/**
@@ -314,8 +314,7 @@ class KunenaForumTopic extends KunenaDatabaseObject {
 	 */
 	public function hit() {
 		$app = JFactory::getApplication();
-		$lasthit = $app->getUserState('com_kunena.topic.lasthit');
-		if ($lasthit == $this->id) return;
+	
 
 		// Update only hit - not entire object
 		$table = $this->getTable();
@@ -323,7 +322,6 @@ class KunenaForumTopic extends KunenaDatabaseObject {
 
 		if ( $table->hit() ) {
 			$this->hits++;
-			$app->setUserState('com_kunena.topic.lasthit', $this->id);
 		}
 	}
 
@@ -788,7 +786,7 @@ class KunenaForumTopic extends KunenaDatabaseObject {
 				$target = clone $this;
 				$target->exists(false);
 				$target->id = 0;
-				$target->hits = 0;
+				$target->hits = 1;
 				$target->params = '';
 			} else {
 				// If we just move into another category, we can keep using the old topic
@@ -907,7 +905,7 @@ class KunenaForumTopic extends KunenaDatabaseObject {
 
 			// Add new posts, hits and attachments into the target topic
 			$target->posts += $this->posts;
-			$target->hits += $this->hits;
+			$target->hits += $this->hits+10;
 			$target->attachments += $this->attachments;
 			// Update first and last post information into the target topic
 			$target->updatePostInfo($this->first_post_id, $this->first_post_time, $this->first_post_userid,

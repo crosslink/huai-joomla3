@@ -1,0 +1,226 @@
+/**
+ * @version		1.0.0
+ * @package		JoomlaXTC Ocular for Joomla! 2.5.x
+ * @author		JoomlaXTC http://www.joomlaxtc.com
+ * @copyright	Copyright (C) 2014 Monev Software LLC. All rights reserved.
+ * @license		http://www.joomlaxtc.com/license JoomlaXTC Proprietary Use License
+ */
+/* ----------------------------------------------*/
+/* GRID LAYOUT CLASSES
+/* ----------------------------------------------*/
+html{min-height:100%;}
+<?php if (!$params->responsive) { ?>
+body  {max-width:1920px;min-width:<?php echo $params->wrapperwidth;?>px;}
+#headerwrap {max-width:1920px;min-width:<?php echo $params->wrapperwidth;?>px;}
+<?php } ?>
+
+/* ----------------------------------------------*/
+/* G 00 - Column Classes Responsive
+/* ----------------------------------------------*/
+.gridfirst{margin-left:0!important;clear:left;}
+.gridlast{clear:right;}
+.row-fluid [class*="span"] {min-height: 0;}
+
+/* ----------------------------------------------*/
+/* G 01 - Basic Structure 
+/* ----------------------------------------------*/
+.xtc-bodygutter{padding:0 1.5%;}
+.xtc-wrapper {max-width:<?php echo $params->wrapperwidth;?>px;}
+.constrainmod {max-width:<?php echo $params->wrapperwidth + (($params->wrappergutter)*2);?>px;margin:0 auto!important;}
+.xtc-wrapperpad {max-width:<?php echo $params->wrapperwidth + (($params->wrappergutter)*2);?>px;margin:0 auto;}
+img {max-width:100%;}
+#messagewrap{padding:10px 0;}
+
+
+/* ----------------------------------------------*/
+/* G 02 - Header
+/* ----------------------------------------------*/
+#header{position:relative;}
+#headertop {max-width:<?php echo $params->wrapperwidth;?>px;margin:0 auto;}
+#headerwrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#headerwrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth - (($params->hwleft_right_pad) *2);?>px;padding-top:<?php echo $params->hwtop_bottom_pad;?>px!important;padding-bottom:<?php echo $params->hwtop_bottom_pad;?>px!important;padding-left:<?php echo $params->hwleft_right_pad;?>px!important;padding-right:<?php echo $params->hwleft_right_pad;?>px!important;margin:0 auto;}
+#header.row-fluid{width:auto;}
+#headerwrap{position: fixed;top: 0; width: 97%;z-index: 99999;}
+#topleft {float:left;}
+#topright {float:right;}
+
+/* ----Sticky Header ----------------------*/
+body.sticky{margin-top:120px;}
+body.nosticky #headerwrap{z-index: 9999999;position:relative;}
+body.sticky #headerwrap {position:fixed;top: 0;z-index: 9999999;margin-bottom:100px;}
+body.sticky #header {max-width:100%  <?php echo - (($params->hwleft_right_pad) *2);?>px;padding-top:<?php echo $params->hwtop_bottom_pad;?>px!important;padding-bottom:<?php echo $params->hwtop_bottom_pad;?>px!important;padding-left:<?php echo $params->hwleft_right_pad;?>px!important;padding-right:<?php echo $params->hwleft_right_pad;?>px!important;}
+#headerwrap.stickyscroll {z-index: 99999;}
+#logo{float:left;}
+.logomobilewrap img {margin:4% 0 0; display: none!important;}
+body.innerpage #headerwrap {margin-bottom:40px;}
+body.sticky.innerpage {margin-top: 160px;}
+  
+/* ----------------------------------------------*/
+/* G 03 - Main Menu
+/* ----------------------------------------------*/
+#menuwrap.xtc-wrapper{max-width:<?php echo $params->wrapperwidth - (($params->hwleft_right_pad) *2);?>px;}
+.suckerfish ul.menu > li > ul,.dualfish ul.menu > li > ul {margin-left:0;padding:6px 12px 12px 12px;}
+#menuwrap .suckerfish ul.menu > li ul li ul {margin:-50px 0px 0px 162px!important;min-width:150px;padding:12px;padding:6px 12px 12px 12px;}
+#menuwrap .dualfish ul.menu > li ul li ul  {margin:-50px 0px 0px 220px!important;min-width:100px;padding:6px 12px 12px 12px;z-index:99999989;}
+/* ----------------------------------------------*/
+/* G 04 - Grid Regions
+/* ----------------------------------------------*/
+/* ----Region1---------------------------*/
+#region1wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;z-index:1!important;}
+#region1wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth - (($params->r1left_right_pad) *2);?>px;padding-top:<?php echo $params->r1top_bottom_pad;?>px;padding-bottom:<?php echo $params->r1top_bottom_pad;?>px;padding-left:<?php echo $params->r1left_right_pad;?>px;padding-right:<?php echo $params->r1left_right_pad;?>px; margin:0 auto;}
+#region1.row-fluid{width:auto;}
+#region1.xtc-fluidwrapper {padding-top:<?php echo $params->r1top_bottom_pad;?>px;padding-bottom:<?php echo $params->r1top_bottom_pad;?>px;padding-left:<?php echo $params->r1left_right_pad;?>px;padding-right:<?php echo $params->r1left_right_pad;?>px; margin:0 auto;} 
+/* ----Region2---------------------------*/
+#region2wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;z-index:3!important;}
+#region2wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth - (($params->r2left_right_pad) *2);?>px;padding-top:<?php echo $params->r2top_bottom_pad;?>px;padding-bottom:<?php echo $params->r2top_bottom_pad;?>px;padding-left:<?php echo $params->r2left_right_pad;?>px;padding-right:<?php echo $params->r2left_right_pad;?>px;margin:0 auto;}
+#region2.row-fluid{width:auto;}
+#region2.xtc-fluidwrapper {padding-top:<?php echo $params->r2top_bottom_pad;?>px;padding-bottom:<?php echo $params->r2top_bottom_pad;?>px;padding-left:<?php echo $params->r2left_right_pad;?>px;padding-right:<?php echo $params->r2left_right_pad;?>px; margin:0 auto;} 
+/* ----Region3---------------------------*/
+#region3wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#region3wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth;?>px;padding-top:<?php echo $params->r3top_bottom_pad;?>px;padding-bottom:<?php echo $params->r3top_bottom_pad;?>px;padding-left:<?php echo $params->r3left_right_pad;?>px;padding-right:<?php echo $params->r3left_right_pad;?>px;margin:0 auto;}
+#region3.row-fluid{width:auto;}
+#region3.xtc-fluidwrapper {padding-top:<?php echo $params->r3top_bottom_pad;?>px;padding-bottom:<?php echo $params->r3top_bottom_pad;?>px;padding-left:<?php echo $params->r3left_right_pad;?>px;padding-right:<?php echo $params->r3left_right_pad;?>px; margin:0 auto;} 
+body.frontpage #region3wrap .xtc-wrapper {padding-bottom:0!important;}
+#component {padding-top:<?php echo $params->r3com_pad_bottom;?>px;padding-bottom:<?php echo $params->r3com_pad_bottom;?>px;padding-right:<?php echo $params->r3com_pad_right;?>px;padding-left:<?php echo $params->r3com_pad_right;?>px;margin-bottom:40px;}
+body.frontpage #component {margin-bottom:80px;}
+#newsflash {padding-right:<?php echo $params->r3com_pad_right;?>px;padding-left:<?php echo $params->r3com_pad_right;?>px;margin-bottom:30px;}
+#banner {padding-right:<?php echo $params->r3com_pad_right;?>px;padding-left:<?php echo $params->r3com_pad_right;?>px;margin-bottom:30px;}
+#xtc-region3title{margin: 0 auto;}
+/* ----Region4---------------------------*/
+#region4wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#region4wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth - (($params->r4left_right_pad) *2);?>px;padding-top:<?php echo $params->r4top_bottom_pad;?>px;padding-bottom:<?php echo $params->r4top_bottom_pad;?>px;padding-left:<?php echo $params->r4left_right_pad;?>px;padding-right:<?php echo $params->r4left_right_pad;?>px;margin:0 auto;}
+#region4.row-fluid{width:auto;}
+#region4.xtc-fluidwrapper {padding-top:<?php echo $params->r4top_bottom_pad;?>px;padding-bottom:<?php echo $params->r4top_bottom_pad;?>px;padding-left:<?php echo $params->r4left_right_pad;?>px;padding-right:<?php echo $params->r4left_right_pad;?>px; margin:0 auto;} 
+/* ----Region5---------------------------*/
+#region5wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#region5wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth - (($params->r5left_right_pad) *2);?>px;padding-top:<?php echo $params->r5top_bottom_pad;?>px;padding-bottom:<?php echo $params->r5top_bottom_pad;?>px;padding-left:<?php echo $params->r5left_right_pad;?>px;padding-right:<?php echo $params->r5left_right_pad;?>px;padding:<?php echo $params->r5top_bottom_pad;?>;margin:0 auto;}
+#region5.row-fluid{width:auto;}
+#region5.xtc-fluidwrapper {padding-top:<?php echo $params->r5top_bottom_pad;?>px;padding-bottom:<?php echo $params->r5top_bottom_pad;?>px;padding-left:<?php echo $params->r5left_right_pad;?>px;padding-right:<?php echo $params->r5left_right_pad;?>px; margin:0 auto;} 
+/* ----Region6---------------------------*/
+#region6wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#region6wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth - (($params->r6left_right_pad) *2);?>px;padding-top:<?php echo $params->r6top_bottom_pad;?>px;padding-bottom:<?php echo $params->r6top_bottom_pad;?>px;padding-left:<?php echo $params->r6left_right_pad;?>px;padding-right:<?php echo $params->r6left_right_pad;?>px;padding:<?php echo $params->r6top_bottom_pad;?>;margin:0 auto;}
+#region6.row-fluid{width:auto;}
+#region6.xtc-fluidwrapper {padding-top:<?php echo $params->r6top_bottom_pad;?>px;padding-bottom:<?php echo $params->r6top_bottom_pad;?>px;padding-left:<?php echo $params->r6left_right_pad;?>px;padding-right:<?php echo $params->r6left_right_pad;?>px; margin:0 auto;} 
+/* ----Region7---------------------------*/
+#region7wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#region7wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth - (($params->r7left_right_pad) *2);?>px;padding-top:<?php echo $params->r7top_bottom_pad;?>px;padding-bottom:<?php echo $params->r7top_bottom_pad;?>px;padding-left:<?php echo $params->r7left_right_pad;?>px;padding-right:<?php echo $params->r7left_right_pad;?>px;padding:<?php echo $params->r7top_bottom_pad;?>;margin:0 auto; }
+#region7.row-fluid{width:auto;}
+#region7.xtc-fluidwrapper {padding-top:<?php echo $params->r7top_bottom_pad;?>px;padding-bottom:<?php echo $params->r7top_bottom_pad;?>px;padding-left:<?php echo $params->r7left_right_pad;?>px;padding-right:<?php echo $params->r7left_right_pad;?>px; margin:0 auto;} 
+/* ----Region8---------------------------*/
+#region8wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#region8wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth - (($params->r8left_right_pad) *2);?>px;padding-top:<?php echo $params->r8top_bottom_pad;?>px;padding-bottom:<?php echo $params->r8top_bottom_pad;?>px;padding-left:<?php echo $params->r8left_right_pad;?>px;padding-right:<?php echo $params->r8left_right_pad;?>px;margin:0 auto;}
+#region8.row-fluid{width:auto; padding-top:60px;}
+#region8.xtc-fluidwrapper {padding-top:<?php echo $params->r8top_bottom_pad;?>px;padding-bottom:<?php echo $params->r8top_bottom_pad;?>px;padding-left:<?php echo $params->r8left_right_pad;?>px;padding-right:<?php echo $params->r8left_right_pad;?>px; margin:0 auto;}
+
+/* ----Region9---------------------------*/
+#region9wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#region9wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth;?>px;padding-top:<?php echo $params->r9top_bottom_pad;?>px;padding-bottom:<?php echo $params->r9top_bottom_pad;?>px;padding-left:<?php echo $params->r9left_right_pad;?>px;padding-right:<?php echo $params->r9left_right_pad;?>px;margin:0 auto;}
+#region9.row-fluid{width:auto;}
+#region9.xtc-fluidwrapper {padding-top:<?php echo $params->r9top_bottom_pad;?>px;padding-bottom:<?php echo $params->r9top_bottom_pad;?>px;padding-left:<?php echo $params->r9left_right_pad;?>px;padding-right:<?php echo $params->r9left_right_pad;?>px; margin:0 auto;} 
+
+#region9 .span8 {border-top: 1px solid #161616;margin: 0px -43px 0px 40px!important;}
+#right9 {border-left: 1px solid #161616;border-top: 1px solid #161616;}
+
+/* ----Region10---------------------------*/
+#region10wrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#region10wrap .xtc-wrapper {max-width:<?php echo $params->wrapperwidth;?>px;padding-top:<?php echo $params->r10top_bottom_pad;?>px;padding-bottom:<?php echo $params->r10top_bottom_pad;?>px;padding-left:<?php echo $params->r10left_right_pad;?>px;padding-right:<?php echo $params->r10left_right_pad;?>px;margin:0 auto;}
+#region10.row-fluid{width:auto; padding-bottom:60px;}
+#region10.xtc-fluidwrapper {padding-top:<?php echo $params->r9top_bottom_pad;?>px;padding-bottom:<?php echo $params->r9top_bottom_pad;?>px;padding-left:<?php echo $params->r9left_right_pad;?>px;padding-right:<?php echo $params->r9left_right_pad;?>px; margin:0 auto;} 
+
+
+/*
+.region9collapse #region9 .span1  {width:8.33333%!important; margin-left:0!important;}
+.region9collapse #region9 .span2  {width:16.666666%!important; margin-left:0!important;}
+.region9collapse #region9 .span3  {width:25%!important; margin-left:0!important;}
+.region9collapse #region9 .span4  {width:33.33333%!important; margin-left:0!important;}
+.region9collapse #region9 .span5  {width:41.66666%!important; margin-left:0!important;}
+.region9collapse #region9 .span6  {width:50%!important; margin-left:0!important;}
+.region9collapse #region9 .span7  {width:58.33333%!important; margin-left:0!important;}
+.region9collapse #region9 .span8  {width:66.666666%!important; margin-left:0!important;}
+.region9collapse #region9 .span9  {width:75%!important; margin-left:0!important;}
+.region9collapse #region9 .span10 {width:83.33333%!important; margin-left:0!important;}
+.region9collapse #region9 .span11 {width:91.66666%!important; margin-left:0!important;}
+.region9collapse #region9 .span12 {width:8.33333%!important; margin-left:0!important;}
+*/
+
+
+/* ----Region Padding---------------------------*/
+.xtc-spacer {margin-bottom:<?php echo $params->regionseparatorwidth;?>px;}
+.xtc-gutter {padding:<?php echo $params->wrappergutter;?>px;}
+.xtc-gutter2 {padding:45px <?php echo $params->wrappergutter;?>px 50px;}
+.xtc-gutter3 {padding:0 <?php echo $params->wrappergutter;?>px;}
+.r1spacer_top{padding:20px 0 0 0;}
+.r2spacer_top{padding:20px 0 0 0;}
+.r3spacer_top{padding:0px 0 0 0;}
+.r4spacer_top{padding:20px 0 0 0;}
+.r5spacer_top{padding:20px 0 0 0;}
+.r6spacer_top{padding:20px 0 0 0;}
+.r7spacer_top{padding:20px 0 0 0;}
+.r8spacer_top{padding:20px 0 0 0;}
+
+/* ----------------------------------------------*/
+/* G 05 - Footer
+/* ----------------------------------------------*/
+#footerwrap .xtc-wrapperpad {width:auto!important;margin:0 auto;}
+#footerwrap .xtc-wrapperpad {max-width:<?php echo $params->wrapperwidth;?>px;padding-top:<?php echo $params->fwtop_bottom_pad;?>px;padding-bottom:<?php echo $params->fwtop_bottom_pad;?>px;padding-left:<?php echo $params->fwleft_right_pad;?>px;padding-right:<?php echo $params->fwleft_right_pad;?>px;margin:0 auto;}
+#footerpad.row-fluid{width:auto;}
+#footer .module {margin-bottom:10px!important;}
+
+/* ----------------------------------------------*/
+/* G 06 - Modules
+/* ----------------------------------------------*/
+.module{margin:0 0 <?php echo $params->modulepacerheight;?>px  0;}
+#left .module{margin:0 0 0 0;}
+#right .module{margin:0 0 0 0;}
+.module > h3 {font-weight:normal !important; }
+.firstarea .module, #left .firstarea .module, .firstarea #right .module,#region4_banner{margin-top:0px!important;}
+.center > div:first-child{padding-top:0;}
+/* Module Overrides,overrides for default suffix within specific areas of the regions */
+#topbanner .module:first-child,#top .module:first-child,#inset .module:first-child,#showcasegrid .module:first-child,#left .module:first-child,#right .module:first-child,#left1 .module:first-child,#right1 .module:first-child,#left2 .module:first-child,#right2 .module:first-child,#left3 .module:first-child,#right3 .module:first-child,#left4 .module:first-child,#right4 .module:first-child,#left5 .module:first-child,#right5 .module:first-child,#left6 .module:first-child,#right6 .module:first-child,#left7 .module:first-child,#right7 .module:first-child,#left8 .module:first-child,#right8 .module:first-child,#left9 .module:first-child,#right9 .module:first-child,#newsflash .module:first-child,
+#banner1 .module:first-child,#breadsearch .module:first-child,#banner .module:first-child,
+.singlearea .module {margin-bottom:0;}
+.lastarea .module {margin-bottom:0;}
+
+/* ----------------------------------------------*/
+/* G 07 MOBILE
+/* ----------------------------------------------*/
+body.mobile .mobilepad{padding:0;}
+body.mobile .mobile > div:first-child{padding:0;}
+body.mobile #mobilewrap{float:right;width:80%;}
+body.mobile .module{margin:0;}
+body.mobile h3.moduletitle,body.mobile .modulecontent{border-right:none;}
+body.mobile #footerwrap {min-width:100%;}
+body.mobile span.itemImage img{max-width:100%;width:auto!important;}
+body.mobile #mobilewrap .lg > div:first-child,body.mobile #mobilewrap .lg > div:first-child + div{float:none!important;width:100%!important;}
+body.mobile #mobilewrap .lg a{line-height:16px!important;}
+#xtc-mobilesitewrap #menu{float:none;}
+.xtc-iconsidemob select[multiple], .xtc-iconsidemob select[size]{width:100%;}
+#component.mobilecomponent.clearfix {padding: 0 12px!important;margin-top:20px;}
+.morewrap td.firstcol > div{text-align:right;}
+.morewrap td.centercol > div{text-align:left;}
+.area_map table{table-layout:fixed;}
+
+/* ----------------------------------------------*/
+/* G 09 Responsive Parameters
+/* ----------------------------------------------*/
+<?php if ($templateParameters->group->grid->responsive) { ?>
+@media(max-width: <?php echo $params->r1hide;?>px ){#region1 {display:none!important;}}
+@media(max-width: <?php echo $params->r2hide;?>px ){#region2 {display:none!important;}}
+@media(max-width: <?php echo $params->r3hide;?>px ){#region3 {display:none!important;}}
+@media(max-width: <?php echo $params->r4hide;?>px ){#region4 {display:none!important;}}
+@media(max-width: <?php echo $params->r5hide;?>px ){#region5 {display:none!important;}}
+@media(max-width: <?php echo $params->r6hide;?>px ){#region6 {display:none!important;}}
+@media(max-width: <?php echo $params->r7hide;?>px ){#region7 {display:none!important;}}
+@media(max-width: <?php echo $params->r8hide;?>px ){#region8 {display:none!important;}}
+@media(max-width: <?php echo $params->r9hide;?>px ){#region9 {display:none!important;}}
+@media(max-width: <?php echo $params->r10hide;?>px ){#region10 {display:none!important;}}
+@media(max-width: <?php echo $params->mmmobile;?>px ){
+#menu .xtcdefaultmenu  {display:none;}
+#menu .mobilebtn {display:block!important;position:absolute;width:30px;height:30px;float:right;}
+#menuwrap {margin-right:12px!important;}
+.mobilebtn select {display:block!important;background:none!important;border:none!important;font-size:16px;height:30px;width:30px;opacity:0; } SELECT.menu.suckerfish.xtcmobilemenu,SELECT.menu.dualfish.xtcmobilemenu {display:block!important;}
+#menuwrap {margin:10px 18px 0 0 !important;}
+}
+@media(max-width: <?php echo $params->msmobile;?>px ){.mobileshow {display:block!important;}.mobilefloat li {display:inline-block;padding-right:12px;}  ul.mobilefloat{margin:0px auto;text-align:center;}.mobilecenter {text-align:center; }
+@media(max-width: <?php echo $params->mhmobile;?>px ){.mobilehide {display:none!important;margin:0px!important;padding:0px!important;height:0px!important;}}
+<?php } ?>

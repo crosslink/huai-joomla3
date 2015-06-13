@@ -183,7 +183,7 @@ class KunenaForumStatistics {
 		}
 	}
 
-	/**
+/**
 	 * @param int $limit
 	 *
 	 * @return array|KunenaForumTopic[]
@@ -191,24 +191,29 @@ class KunenaForumStatistics {
 	public function loadTopTopics($limit=0) {
 		$limit = $limit ? $limit : $this->_config->popsubjectcount;
 		if (count($this->topTopics) < $limit) {
-			$params = array('orderby'=>'posts DESC');
+			$params = array('orderby'=>'hits DESC');
 			list($total, $this->topTopics) = KunenaForumTopicHelper::getLatestTopics(false, 0, $limit, $params);
 
 			$top = reset($this->topTopics);
 			if (!$top) return array();
 			$top->title = JText::_('COM_KUNENA_LIB_STAT_TOP_TOPICS');
 			$top->titleName = JText::_('COM_KUNENA_GEN_SUBJECT');
-			$top->titleCount =  JText::_('COM_KUNENA_USRL_POSTS');
+			$top->titleCount =  JText::_('COM_KUNENA_GEN_HITS');
 
 			foreach ($this->topTopics as &$item) {
 				$item = clone $item;
-				$item->count = $item->posts;
+				$item->count = $item->hits;
 				$item->link = JHtml::_('kunenaforum.link', $item->getUri(), KunenaHtmlParser::parseText ($item->subject));
-				$item->percent = round(100 * $item->count / $top->posts);
+				$item->percent = round(100 * $item->count / $top->hits);
 			}
 		}
 		return array_slice($this->topTopics, 0, $limit);
 	}
+
+
+
+
+
 
 	/**
 	 * @param int $limit
@@ -236,44 +241,6 @@ class KunenaForumStatistics {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	/**
-	 * @param int $limit
-	 *
-	 * @return array
-	 */
-	public function loadTopHITS($limit=0) {
-		$limit = $limit ? $limit : $this->_config->popusercount;
-		if (count($this->tophits) < $limit) {
-			$this->tophits = KunenaUserHelper::getTophits($limit);
-
-			$top = reset($this->tophits);
-			if (!$top) return array();
-			$top->title = JText::_('COM_KUNENA_LIB_STAT_TOP_POSTERS');
-			$top->titleName = JText::_('COM_KUNENA_USERNAME');
-			$top->titleCount =  JText::_('COM_KUNENA_USRL_POSTS');
-
-			foreach ($this->topPosters as &$item) {
-				$item = clone $item;
-				$item->link = KunenaUserHelper::get($item->id)->getLink();
-				$item->percent = round(100 * $item->count / $top->hits);
-			}
-		}
-		return array_slice($this->topPosters, 0, $limit);
-	}
 
 
 

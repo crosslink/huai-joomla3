@@ -1,0 +1,118 @@
+/*----------------------------------
+        Module Specific
+-----------------------------------*/
+/* Finder */
+#mod-finder-searchform{
+    margin: 0 0;
+    position: relative;
+    //width: 300px;
+
+    div.finder{margin-bottom: 0;}
+
+    #mod-finder-searchword{
+        background: #fbfbfb;
+        &:focus{background: #fff;}
+    }
+    button.btn{
+      .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+    }
+}
+/*Breadcrumbs*/
+ul.breadcrumb{margin: 0;}
+
+/* Default login module */
+#login-form{
+  .add-on label{display: none;}
+}
+
+/* Default joomla menu */
+/* Turn off image */
+ul.menu li img{
+    display: none;
+}
+
+.nav-list > li > a {
+    border-bottom: 1px solid rgba(0, 10, 170, 0.1);
+    &:hover {text-shadow: none;}
+}
+
+// Icon font in module block
+.block[class^="icon-"], 
+.block[class*=" icon-"]{
+    font-family: inherit;
+    line-height: inherit;
+}
+.title [class^="icon-"], 
+.title [class*=" icon-"]{ margin-right: 10px;}
+
+//Login-Form
+
+#login-form{padding: 10px; margin: 0 10px 0 10px; border-radius: 5px; 
+  #gradient >.vertical (#fff, #fafafa); border: 1px solid #DADADA;}
+#form-login-username{float: left; margin-right: 10px;}
+#modlgn-username,#modlgn-passwd{width: 85px;}
+#form-login-submit{float: right; margin-top: -40px;}
+#form-login-remember{display: none;}
+.login-greeting{float: left; padding-right: 10px;}
+
+/*-------Latest News----------*/
+
+ul.latestnews li a{
+font-size: 18px;
+font-weight: bold;
+line-height: 30px;
+padding: 0;
+}
+
+ul.latestnews{
+  list-style: none;
+}
+
+//Dummy Modules for Presentation
+
+//Common
+.rollover{
+  .transition(all 0.2s ease-in-out);
+  float: left;
+}
+
+.rollover-customize a {
+    background: url(../images/demo/customize_full.png) no-repeat 0px 0px;
+}
+
+.rollover-powerful a {
+    background: url(../images/demo/powerful_full.png) no-repeat 0px 0px;
+}
+
+.rollover-creative a {
+    background: url(../images/demo/creative_full.png) no-repeat 0px 0px;
+}
+
+.rollover-responsive a {
+    background: url(../images/demo/responsive_full.png) no-repeat 0px 0px;
+  }
+
+.rollover-responsive a, .rollover-customize a, .rollover-powerful a, .rollover-creative a {
+    width: 200px;
+    height: 200px;
+    display: block;
+    font-size: 0;
+    margin: auto;
+}
+a:hover {
+    background-position: 0px -202px;
+
+}
+
+ // For Expose Fet. Styling
+.key-features{text-transform: uppercase; text-align: center;
+ font-family: @font-primary; font-size: 30px;}
+
+.list-check-mark li{
+font-size: 18px;
+list-style: none;
+background: url("../images/demo/check-mark.png") no-repeat scroll 0 0px transparent;
+padding-left: 40px;
+margin-bottom: 10px;
+line-height: 30px;
+}

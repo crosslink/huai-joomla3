@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="content">
+	<name>Content - mgThumbnails</name>
+	<author>Molnár Gergely</author>
+	<creationDate>November 2012</creationDate>
+	<copyright>Copyright (C)2011. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@echoweb.sk</authorEmail>
+	<authorUrl>www.echoweb.sk</authorUrl>
+	<version>2.1.3</version>
+	<description>This content plugin creates lightbox galleries with the help of following javascript libraries: jQuery, Mootools, Colorbox, Fancybox, Greybox, Shadobox, Slimbox2, Slimbox, Joomla modal (Squeezebox). You just need to insert the fullsize image (what will be shown in the lightbox) and resize it in your content editor. The plugin automatically creates modal links from the resized images, and save the thumbnail pictures too, for faster loading of images.</description>
+	<languages>
+	   <language tag="en-GB">en-GB/en-GB.plg_content_mgthumbnails.ini</language>
+	   <language tag="en-GB">en-GB/en-GB.plg_content_mgthumbnails.sys.ini</language>
+	</languages>
+	<files>
+		<filename plugin="mgthumbnails">mgthumbnails.php</filename>
+		<filename>index.html</filename>
+		<folder>colorbox</folder>
+		<folder>fancybox</folder>
+		<folder>greybox</folder>
+		<folder>shadowbox</folder>
+		<folder>slimbox18-mt13</folder>
+		<folder>slimbox2-jq</folder>
+	</files>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="blog_frontpage" type="list" default="1" label="Blogview &amp; Frontpage" description="Enabled in Blogview &amp; Frontpage">
+					<option value="1">on</option>
+					<option value="0">off</option>
+				</field>
+				<field name="fulltext" type="list" default="1" label="Articles &amp; Content places" description="Enabled in Articles and Content places">
+					<option value="1">on</option>
+					<option value="0">off</option>
+				</field>
+				<field name="swScript" type="list" default="fancybox" label="Select script" description="Select the method of showing images">
+					<option value="colorbox">Colorbox</option>
+					<option value="fancybox">Fancybox</option>
+					<option value="greybox">Greybox</option>
+					<option value="modal">Joomla Modal</option>
+					<option value="shadowbox">Shadowbox</option>
+					<option value="slimbox-jq">Slimbox2 jQuery</option>
+					<option value="slimbox-mt">Slimbox Mootools</option>
+				</field>
+<!--				<field name="activation" type="list" default="resized" label="Lightbox activation" description="Activate the lightbox/plugin only at resized images or at all images (except with the Excluded classes of course)">
+					<option value="all">All images</option>
+					<option value="resized">Resized only</option>
+				</field> -->
+				<field name="exclude_classes" type="text" default="" label="Excluded classes" description="Comma separated class names, where the plugin NOT has to activate self" />
+				<field name="mgThumbPath" type="text" default="images/mgthumbnails/" label="Thumbnail path" description="Path to thumbnails" />				
+				<field name="thumbQuality" type="text" size="3" default="90" label="Thumbnail quality" description="Quality of created thumbnails in percent" />				
+			</fieldset>
+			
+
+			<fieldset name="COLORBOX_OPTIONS">
+				<field name="cbwindowwidth" type="text" default="0" size="6" label="Window Width" description="Set the maximum width of the window. If zero, the screen will be the maximum. You can set percentage as well (ex.: 85% ->85 percent of the borwserscreen)." />
+				<field name="cbwindowheight" type="text" default="0" size="6" label="Window Height" description="Set the maximum height of the window. If zero, the screen will be the maximum. You can set percentage as well (ex.: 85% ->85 percent of the borwserscreen)." />
+				<field name="cbshowtitle" type="list" default="true" label="Show Title" description="Show the title of images">
+					<option value="false">Hide</option>
+					<option value="true">Show</option>
+				</field>
+				<field name="cboverlayopacity" type="text" default="0.7" label="Overlay opacity" description="Set the opacity of the overlay." />
+				<field name="cbgalleryloop" type="list" default="true" label="Loop images" description="Enable it, if you want to cycle images. At the last image, the gallery starts again, if you push next.">
+					<option value="false">Off</option>
+					<option value="true">On</option>
+				</field>
+				<field name="cbanimationtype" type="list" default="fade" label="Annimation Effect" description="You can select effect of appearance">
+					<option value="fade">Fade</option>
+					<option value="elastic">Elastic</option>                                                                                         
+					<option value="none">Off</option>
+				</field>
+				<field name="cbanimationspeed" type="text" default="350" size="6" label="Animation speed" description="Set the animation speed in microseconds (1/1000 sec)" />
+				<field name="cbslideshow" type="list" default="false" label="Slideshow option" description="Enable it, if you want to be able play images as slideshow.">
+					<option value="false">Off</option>
+					<option value="true">On</option>
+				</field>
+				<field name="cbslideshowspeed" type="text" default="5000" size="6" label="Slideshow Speed" description="Set the speed of slideshow in microseconds. If value is 5000, an image will be shown for 5 seconds." />
+				<field name="cbtextstartshow" type="text" default="Start Slideshow" label="Start slideshow text" description="Name of the link to start slideshow" />
+				<field name="cbtextstopshow" type="text" default="Stop Slideshow" label="Stop slideshow text" description="Name of the link to stop slideshow" />
+				<field name="cbtextnext" type="text" default="Next" label="Next image text" description="Name of the link to next image" />
+				<field name="cbtextprev" type="text" default="Prev" label="Previous image text" description="Name of the link to previous image" />
+				<field name="cbtextclose" type="text" default="Close" label="Close lightbox text" description="Name of the link to close gallery/lightbox window" />
+			</fieldset>
+			
+			
+			<fieldset name="FANCYBOX_OPTIONS">
+				<field name="jqoverlaycolor" type="text" default="777777" label="Overlay color" description="Set the color of the overlay in hexadecimal numbers without the # sign. ex. black: 000000 " />
+				<field name="jqoverlayopacity" type="text" default="0.9" label="Overlay opacity" description="Set the opacity of the overlay." />
+<!--				<field name="jqwindowwidth" type="text" default="0" size="6" label="Window Width" description="Set the maximum width of the window. If zero, the screen will be the maximum." />
+				<field name="jqwindowheight" type="text" default="0" size="6" label="Window Height" description="Set the maximum height of the window. If zero, the screen will be the maximum." />
+-->				<field name="jqwindowpadding" type="text" default="0" size="6" label="Window border" description="Set the border weight of the window in pixels." />
+				<field name="jqshowtitle" type="list" default="true" label="Show Title" description="Show the title of images">
+					<option value="false">Hide</option>
+					<option value="true">Show</option>
+				</field>
+				<field name="jqgalleryloop" type="list" default="true" label="Loop images" description="Enable it, if you want to cycle images. At the last image, the gallery starts again, if you push next.">
+					<option value="false">Off</option>
+					<option value="true">On</option>
+				</field>
+				<field name="jqanimation" type="list" default="fade" label="Annimation Effect" description="You can select effect of appearance">
+					<option value="fade">Fade</option>
+					<option value="elastic">Elastic</option>
+					<option value="none">Off</option>
+				</field>
+			</fieldset>
+			
+			
+<!--			<fieldset name="GREYBOX_OPTIONS">
+			</fieldset>
+-->			
+			
+			<fieldset name="SHADOWBOX_OPTIONS">
+				<field name="sboverlaycolor" type="text" default="777777" label="Overlay color" description="Set the color of the overlay in hexadecimal numbers without the # sign. ex. black: 000000 " />
+				<field name="sboverlayopacity" type="text" default="0.9" label="Overlay opacity" description="Set the opacity of the overlay." />
+				<field name="sbgalleryloop" type="list" default="true" label="Loop images" description="Enable it, if you want to cycle images. At the last image, the gallery starts again, if you push next.">
+					<option value="false">Off</option>
+					<option value="true">On</option>
+				</field>
+				<field name="sbanimation" type="list" default="true" label="Animation" description="You can disable all effects">
+					<option value="true">On</option>
+					<option value="false">Off</option>
+				</field>
+				<field name="sbanimatefade" type="list" default="true" label="Fade animation" description="You can disable the fade effect">
+					<option value="true">On</option>
+					<option value="false">Off</option>
+				</field>
+				<field name="sbresizespeed" type="text" default="0.35" label="Resize speed" description="Set the duration of resize animation in seconds." />
+				<field name="sbfadespeed" type="text" default="0.35" label="Fade speed" description="Set the duration of fade animation in seconds." />
+				<field name="sbslideshowtime" type="text" default="0" label="Slideshow speed" description="Set the speed of slideshow in seconds. If zero the slideshow will be disabled." />
+				<field name="sbpadding" type="text" default="20" label="Screen padding" description="Set the padding size of viewport in pixels but without px sign." />
+				<field name="sbnav" type="list" default="true" label="Display navigation" description="You can disable navigation">
+					<option value="true">On</option>
+					<option value="false">Off</option>
+				</field>
+				<field name="sbcounter" type="list" default="true" label="Display counter" description="You can disable image counter">
+					<option value="true">On</option>
+					<option value="false">Off</option>
+				</field>
+			</fieldset>
+			
+			
+			<fieldset name="SLIMBOX_JQ_OPTIONS">
+				<field name="slim2overlayopacity" type="text" default="0.9" label="Overlay opacity" description="Set the opacity of the overlay." />
+				<field name="slim2galleryloop" type="list" default="true" label="Loop images" description="Enable it, if you want to cycle images. At the last image, the gallery starts again, if you push next.">
+					<option value="false">Off</option>
+					<option value="true">On</option>
+				</field>
+				<field name="slim2overlayfadespeed" type="text" default="300" label="Overlay fade speed" description="Set the duration of overlay fade animation in milliseconds." />
+				<field name="slim2imagefadespeed" type="text" default="300" label="Image fade speed" description="Set the duration of image fade animation in milliseconds." />
+				<field name="slim2resizespeed" type="text" default="300" label="Image resize speed" description="Set the duration of image resize animation in milliseconds." />
+				<field name="slim2captionspeed" type="text" default="300" label="Image caption speed" description="Set the duration of image caption animation in milliseconds." />
+				<field name="slim2countertext" type="text" default="Image {x} of {y}" label="Image counter text" description="Set the counter text where {x} is the index of current image. {y} is the number of all images in the gallery." />
+			</fieldset>
+			
+			
+			<fieldset name="SLIMBOX_MT_OPTIONS">
+				<field name="slimoverlayopacity" type="text" default="0.9" label="Overlay opacity" description="Set the opacity of the overlay." />
+				<field name="slimgalleryloop" type="list" default="true" label="Loop images" description="Enable it, if you want to cycle images. At the last image, the gallery starts again, if you push next.">
+					<option value="false">Off</option>
+					<option value="true">On</option>
+				</field>
+				<field name="slimoverlayfadespeed" type="text" default="300" label="Overlay fade speed" description="Set the duration of overlay fade animation in milliseconds." />
+				<field name="slimimagefadespeed" type="text" default="300" label="Image fade speed" description="Set the duration of image fade animation in milliseconds." />
+				<field name="slimresizespeed" type="text" default="300" label="Image resize speed" description="Set the duration of image resize animation in milliseconds." />
+				<field name="slimcaptionspeed" type="text" default="300" label="Image caption speed" description="Set the duration of image caption animation in milliseconds." />
+				<field name="slimcountertext" type="text" default="Image {x} of {y}" label="Image counter text" description="Set the counter text where {x} is the index of current image. {y} is the number of all images in the gallery." />
+			</fieldset>
+			
+						
+			<fieldset name="LIBRARY_OPTIONS">
+				<field name="jqlib" type="list" default="1" label="Include jQuery lib" description="If a 3rd party applicaion/extension has already included the jQuery library, this option should be: No">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="mtlib" type="list" default="1" label="Include Mootools lib" description="If a 3rd party applicaion/extension has already included the Mootools library, this option should be: No">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="jqfancylib" type="list" default="1" label="Include Fancybox lib" description="If a 3rd party applicaion/extension has already included the Fancybox library, this option should be: No">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="shadowboxlib" type="list" default="1" label="Include Shadowbox lib" description="If a 3rd party applicaion/extension has already included the Shadowbox library, this option should be: No">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="slimboxjq" type="list" default="1" label="Include JQ Slimbox2 lib" description="If a 3rd party applicaion/extension has already included the Slimbox2 library, this option should be: No">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="slimboxmt" type="list" default="1" label="Include MT Slimbox lib" description="If a 3rd party applicaion/extension has already included the Slimbox library, this option should be: No">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="greyboxlib" type="list" default="1" label="Include MT Greybox lib" description="If a 3rd party applicaion/extension has already included the Greybox library, this option should be: No">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="colorboxlib" type="list" default="1" label="Include MT Colorbox lib" description="If a 3rd party applicaion/extension has already included the Colorbox library, this option should be: No">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

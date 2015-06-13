@@ -1,0 +1,116 @@
+/**
+ * @package     Expose Base Theme
+ * @version     2.0
+ * @author      ThemeXpert http://www.themexpert.com
+ * @copyright   Copyright (C) 2010 - 2011 ThemeXpert
+ * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
+ * @file        blue.css
+ **/
+
+// Import mixing for better use of CSS3
+@import "../../../../libraries/expose/interface/less/mixins.less";
+
+@color-primary: #517901;
+@color-primary-light: #75AF00;
+@color-light-black : #679B00;
+
+a{color: @color-primary;}
+a:hover{color: @color-primary-light;text-decoration: none;}
+::selection         {background: @color-primary; color: #fff;}
+::-moz-selection    {background: @color-primary; color: #fff;}
+
+.colorWhite{
+    color: #f5f5f5;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+
+//Background
+body{background: url(../../images/backgrounds/white_wall_hash.png) repeat 0 0;}
+
+// Readon and primary button
+.button,
+.readon,
+.readmore,
+.btn-primary{
+background: @color-primary;
+  &:hover{
+    background: @color-primary-light;
+      color: #fff;
+
+  }
+}
+
+
+
+/*----------------------------------
+         Position Specific
+-----------------------------------*/
+#roof{
+  background: url(../../images/backgrounds/noise.png) repeat 0 0 @color-primary;
+  .colorWhite;
+
+  a{.colorWhite;}
+}
+
+#footer-wrap{
+  color: #fff;
+ ul {
+  list-style: none;
+  margin: 0;
+}
+
+li a{
+font-size: 14px;
+letter-spacing: 2px;
+color: #fff;
+
+&:hover{
+   color: @color-primary-light;
+}
+}
+      p a{
+  color: @color-primary;
+  &:hover{color: @color-primary-light;}
+}
+}
+
+/*----------------------------------
+         Menu style
+-----------------------------------*/
+.ex-menu li:hover > a,
+.ex-menu li > a:focus,
+.ex-menu li > a:active,
+.ex-menu li.active > a {
+  background: @color-primary-light; border: 1px solid @color-primary;
+}
+
+.ex-menu ul.l1 > li:hover > a,
+.ex-menu ul.l1 > li.active > a {
+  background: @color-primary;
+}
+
+/*----------------------------------
+          Module Specific
+-----------------------------------*/
+#mod-finder-searchform button.finder{background-color: @color-primary;}
+/* Joomla Menu */
+.nav-list .active > a,
+.nav-list .active:hover > a,
+.nav-list > li > a:hover{
+    border-color: @color-light-black;
+}
+
+.title span{color: @color-primary-light;}
+
+/*----------------------------------
+          K2 Specific
+-----------------------------------*/
+div.item-xtra-info .catItemDateCreated,
+div.item-xtra-info .itemDateCreated,
+div.item-xtra-info .userItemDateCreated,
+div.item-xtra-info .tagItemDateCreated{
+  background: @color-light-black;
+}
+
+div.k2Pagination ul li span, #component .pagination ul li span{background: @color-light-black;
+}

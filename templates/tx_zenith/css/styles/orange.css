@@ -1,0 +1,128 @@
+.clearfix,
+.clear {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after,
+.clear:before,
+.clear:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after,
+.clear:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  color: #046;
+}
+a:hover {
+  color: #DA5C41;
+  text-decoration: none;
+}
+::selection {
+  background: #D05338;
+  color: #fff;
+}
+::-moz-selection {
+  background: #D05338;
+  color: #fff;
+}
+.colorWhite {
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+body {
+  background: url(../../images/backgrounds/office.png) repeat 0 0;
+}
+.button,
+.readon,
+.readmore,
+.btn-primary {
+  background: #D05338;
+}
+.button:hover,
+.readon:hover,
+.readmore:hover,
+.btn-primary:hover {
+  background: #DA5C41;
+  color: #fff;
+}
+#roof {
+  background: url(../../images/backgrounds/noise.png) repeat 0 0 #D05338;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+#roof a {
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+#footer-wrap {
+  color: #fff;
+}
+#footer-wrap ul {
+  list-style: none;
+  margin: 0;
+}
+#footer-wrap li a {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+#footer-wrap li a:hover {
+  color: #DA5C41;
+}
+#footer-wrap p a {
+  color: #D05338;
+}
+#footer-wrap p a:hover {
+  color: #DA5C41;
+}
+.ex-menu li:hover > a,
+.ex-menu li > a:focus,
+.ex-menu li > a:active,
+.ex-menu li.active > a {
+  background: #DA5C41;
+  border: 1px solid #D05338;
+}
+.ex-menu ul.l1 > li:hover > a,
+.ex-menu ul.l1 > li.active > a {
+  background: #D05338;
+}
+#mod-finder-searchform button.finder {
+  background-color: #D05338;
+}
+.nav-list .active > a,
+.nav-list .active:hover > a,
+.nav-list > li > a:hover {
+  border-color: #BD4D35;
+}
+.title span {
+  color: #DA5C41;
+}
+div.item-xtra-info .catItemDateCreated,
+div.item-xtra-info .itemDateCreated,
+div.item-xtra-info .userItemDateCreated,
+div.item-xtra-info .tagItemDateCreated {
+  background: #BD4D35;
+}
+div.k2Pagination ul li span,
+#component .pagination ul li span {
+  background: #BD4D35;
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.2.1" client="site" method="upgrade">
+	<name>Joes Word Cloud</name>
+	<creationDate>January 2011</creationDate>
+	<modifiedDate>March 2014</modifiedDate>
+	<author>JoelLipman.Com</author>
+	<authorEmail>info@joellipman.com</authorEmail>
+	<authorUrl>http://joellipman.com</authorUrl>
+	<copyright>Copyright 2014 by Joel Lipman / www.joellipman.com All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<version>3.2.2</version>
+	<description>Module JWC v3.2.2 - Displays a cluster of the words from your Joomla! articles (core content not meta data).  What makes this word cloud module different is that it takes its words directly from your Joomla! core articles instead of your meta tags which means less work to setup. It has been tested with various languages across the world and 3rd-party templates.</description>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_joeswordcloud.ini</language>
+    </languages>
+	<files>
+		<filename module="mod_joeswordcloud">mod_joeswordcloud.php</filename>
+        <filename>mod_joeswordcloud.xml</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+	</files>
+	<config>
+	<fields name="params">
+	<fieldset name="Style">
+		<field name="moduleclass_sfx" type="text" default="" label="JWCPARAMMODULECLASSSUFFIXLABEL" description="JWCPARAMMODULECLASSSUFFIXDESC" />
+		<field name="paramMODULEWIDTH" type="text" default="" label="JWCPARAMMODULEWIDTHLABEL" description="JWCPARAMMODULEWIDTHDESC" />
+		<field name="paramTEXTALIGNMENT" type="list" default="left" label="JWCPARAMMODULETEXTALIGNMENTLABEL" description="JWCPARAMMODULETEXTALIGNMENTDESC">
+			<option value="0">JWCPARAMMODULEOPTIONTEXTALIGNMENT1</option>
+			<option value="1">JWCPARAMMODULEOPTIONTEXTALIGNMENT2</option>
+			<option value="2">JWCPARAMMODULEOPTIONTEXTALIGNMENT3</option>
+			<option value="3">JWCPARAMMODULEOPTIONTEXTALIGNMENT4</option>
+		</field>
+		<field name="paramWORDUNDERLINES" type="radio" default="0" label="JWCPARAMMODULESCANWORDUNDERLINESLABEL" description="JWCPARAMMODULESCANWORDUNDERLINESDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+		<field name="paramLINKBG" type="radio" default="0" label="JWCPARAMLINKBGLABEL" description="JWCPARAMLINKBGDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+		<field name="paramLINKFGCOLOR" type="text" default="#fff" label="JWCPARAMLINKFGCOLORLABEL" description="JWCPARAMLINKFGCOLORDESC" />
+		<field name="paramLINKBGCOLOR" type="text" default="#e98500" label="JWCPARAMLINKBGCOLORLABEL" description="JWCPARAMLINKBGCOLORDESC" />
+		<field name="paramLINKBORDERCOLOR" type="text" default="orange" label="JWCPARAMLINKBORDERCOLORLABEL" description="JWCPARAMLINKBORDERCOLORDESC" />
+		<field name="paramLINKBORDERSIZE" type="text" default="1" label="JWCPARAMLINKBORDERSIZELABEL" description="JWCPARAMLINKBORDERSIZEDESC" />
+		<field type="spacer" name="" default="" />
+		<field type="spacer" name="JWCSPACERCSS3STYLESLABEL" description="JWCSPACERCSS3STYLESDESC" default="" />
+		<field name="paramLINKCORNERRADIUS" type="text" default="5" label="JWCPARAMLINKCORNERRADIUSLABEL" description="JWCPARAMLINKCORNERRADIUSDESC" />
+	</fieldset>
+
+	<fieldset name="Content">
+		<field name="cache" type="list" default="1" label="JWCPARAMCONTENTCACHINGLABEL" description="JWCPARAMCONTENTCACHINGDESC">
+			<option value="0">JWCPARAMMODULEOPTIONCACHING1</option>
+			<option value="1">JWCPARAMMODULEOPTIONCACHING2</option>
+		</field>
+		<field name="paramSCANCONTENT" type="list" default="2" label="JWCPARAMMODULESCANCONTENTLABEL" description="JWCPARAMMODULESCANCONTENTDESC">
+			<option value="0">JWCPARAMMODULEOPTIONSCANCONTENT1</option>
+			<option value="1">JWCPARAMMODULEOPTIONSCANCONTENT2</option>
+			<option value="2">JWCPARAMMODULEOPTIONSCANCONTENT3</option>
+		</field>
+		<field name="paramSCANARTICLEONLY" type="radio" default="0" label="JWCPARAMSCANARTICLEONLYLABEL" description="JWCPARAMSCANARTICLEONLYDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+		<field name="paramUSEACCESSLEVELS" type="radio" default="0" label="JWCPARAMSCANPUBLICLABEL" description="JWCPARAMSCANPUBLICDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+		<field type="spacer" name="" default="" />
+		<field type="spacer" name="JWCSPACERFILTEROVERRIDESLABEL" default="" />
+		<field name="paramINCLUDEKEYWORDS" type="textarea" cols="30" rows="4" default="" label="JWCPARAMMODULEINCLUDEKEYWORDSLABEL" description="JWCPARAMMODULEINCLUDEKEYWORDSDESC" />
+		<field name="paramEXCLUDEKEYWORDS" type="textarea" cols="30" rows="4" default="" label="JWCPARAMMODULEEXCLUDEKEYWORDSLABEL" description="JWCPARAMMODULEEXCLUDEKEYWORDSDESC" />
+		<field name="paramCASESENSITIVE" type="radio" default="0" label="JWCPARAMMODULESUPPORTCYRILLICLABEL" description="JWCPARAMMODULESUPPORTCYRILLICDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+		<field type="spacer" name="" default="" />
+		<field type="spacer" name="JWCSPACERCATEGORYFILTERSLABEL" description="JWCSPACERCATEGORYFILTERSDESC" default="" />
+		<field name="paramCATEGORYLIST" type="sql" default="10" label="JWCPARAMVIEWCATEGORIESLABEL" description="JWCPARAMVIEWCATEGORIESDESC" query="SELECT id, CONCAT(id, ' || ', title) AS fullvalue FROM #__categories WHERE extension='com_content' ORDER BY title" key_field="id" value_field="fullvalue" />
+		<field name="paramINCLUDECATEGORIES" type="text" default="" label="JWCPARAMINCLUDECATEGORIESLABEL" description="JWCPARAMINCLUDECATEGORIESDESC" />
+		<field name="paramEXCLUDECATEGORIES" type="text" default="" label="JWCPARAMEXCLUDECATEGORIESLABEL" description="JWCPARAMEXCLUDECATEGORIESDESC" />
+	</fieldset>
+
+	<fieldset name="Configuration">
+
+		<field type="spacer" name="JWCSPACERMODULESETTINGSLABEL" default="" />
+		<field name="paramSEARCHURL" type="text" size="50" default="?option=com_search&amp;searchword=" label="JWCPARAMMODULESEARCHURLLABEL" description="JWCPARAMMODULESEARCHURLDESC" />
+		<field name="paramWORDCOUNT" type="text" size="50" default="50" label="JWCPARAMMODULEWORDCOUNTLABEL" description="JWCPARAMMODULEWORDCOUNTDESC" />
+
+		<field type="spacer" name="" default="" />
+		<field type="spacer" name="JWCSPACERWORDCRITERIALABEL" default="" />
+		<field name="paramMINWORDLENGTH" type="text" size="50" default="4" label="JWCPARAMMODULEMINWORDLENGTHLABEL" description="JWCPARAMMODULEMINWORDLENGTHDESC" />
+		<field name="paramMINFONTSIZE" type="text" size="50" default="8" label="JWCPARAMMODULEMINFONTSIZELABEL" description="JWCPARAMMODULEMINFONTSIZEDESC" />
+		<field name="paramMAXFONTSIZE" type="text" size="50" default="30" label="JWCPARAMMODULEMAXFONTSIZELABEL" description="JWCPARAMMODULEMAXFONTSIZEDESC" />
+
+		<field type="spacer" name="" default="" />
+		<field type="spacer" name="JWCSPACERWORDORDERLABEL" default="" />
+		<field name="paramSORTORDERTYPE" type="list" default="0" label="JWCPARAMSORTORDERTYPELABEL" description="JWCPARAMSORTORDERTYPEDESC">
+			<option value="0">JWCPARAMMODULEOPTIONORDERTYPE1</option>
+			<option value="1">JWCPARAMMODULEOPTIONORDERTYPE2</option>
+			<option value="2">JWCPARAMMODULEOPTIONORDERTYPE3</option>
+		</field>
+		<field name="paramSORTORDERORDER" type="list" default="0" label="JWCPARAMSORTORDERORDERLABEL" description="JWCPARAMSORTORDERORDERDESC">
+			<option value="1">JWCPARAMMODULEOPTIONORDER1</option>
+			<option value="0">JWCPARAMMODULEOPTIONORDER2</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="Integration">
+
+		<field name="paramSCANHOTPROPERTY" type="radio" default="0" label="JWCPARAMMODULESCANHOTPROPERTYLABEL" description="JWCPARAMMODULESCANHOTPROPERTYDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+		<field name="paramSCANJEVENTS" type="radio" default="0" label="JWCPARAMMODULESCANJEVENTSLABEL" description="JWCPARAMMODULESCANJEVENTSDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+		<field name="paramSCANK2" type="radio" default="0" label="JWCPARAMMODULESCANK2LABEL" description="JWCPARAMMODULESCANK2DESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+		<field name="paramSCANPHOCADOWNLOAD" type="radio" default="0" label="JWCPARAMMODULESCANPHOCADOWNLOADLABEL" description="JWCPARAMMODULESCANPHOCADOWNLOADDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+
+		<field name="paramSCANNOJOOMLA" type="radio" default="0" label="JWCPARAMMODULESCANNOJOOMLALABEL" description="JWCPARAMMODULESCANNOJOOMLADESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+
+	</fieldset>
+	<fieldset name="Debug">
+		<field name="paramSHOWDEBUG" type="radio" default="0" label="JWCPARAMMODULESHOWSQLLABEL" description="JWCPARAMMODULESHOWSQLDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+		<field name="paramPOWEREDBY" type="radio" default="1" label="JWCPARAMMODULEPOWEREDBYLABEL" description="JWCPARAMMODULEPOWEREDBYDESC">
+			<option value="1">BOOLEANYES</option>
+			<option value="0">BOOLEANNO</option>
+		</field>
+	</fieldset>
+	</fields>
+	</config>
+ <updateservers>
+  <server type="extension" priority="1" name="JoelLipmanUpdateSite">http://updates.joellipman.com/joomla/mod_joeswordcloud/mod_joeswordcloud-update.xml</server> 
+  </updateservers>
+</extension>

@@ -1,0 +1,128 @@
+.clearfix,
+.clear {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after,
+.clear:before,
+.clear:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after,
+.clear:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  color: #0096D2;
+}
+a:hover {
+  color: #00B7FF;
+  text-decoration: none;
+}
+::selection {
+  background: #0096D2;
+  color: #fff;
+}
+::-moz-selection {
+  background: #0096D2;
+  color: #fff;
+}
+.colorWhite {
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+body {
+  background: url(../../images/backgrounds/black_lozenge.png) repeat 0 0;
+}
+.button,
+.readon,
+.readmore,
+.btn-primary {
+  background: #0096D2;
+}
+.button:hover,
+.readon:hover,
+.readmore:hover,
+.btn-primary:hover {
+  background: #00B7FF;
+  color: #fff;
+}
+#roof {
+  background: url(../../images/backgrounds/noise.png) repeat 0 0 #0096D2;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+#roof a {
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+#footer-wrap {
+  color: #fff;
+}
+#footer-wrap ul {
+  list-style: none;
+  margin: 0;
+}
+#footer-wrap li a {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+#footer-wrap li a:hover {
+  color: #00B7FF;
+}
+#footer-wrap p a {
+  color: #0096D2;
+}
+#footer-wrap p a:hover {
+  color: #00B7FF;
+}
+.ex-menu li:hover > a,
+.ex-menu li > a:focus,
+.ex-menu li > a:active,
+.ex-menu li.active > a {
+  background: #00B7FF;
+  border: 1px solid #0096D2;
+}
+.ex-menu ul.l1 > li:hover > a,
+.ex-menu ul.l1 > li.active > a {
+  background: #0096D2;
+}
+#mod-finder-searchform button.finder {
+  background-color: #0096D2;
+}
+.nav-list .active > a,
+.nav-list .active:hover > a,
+.nav-list > li > a:hover {
+  border-color: #006F9B;
+}
+.title span {
+  color: #00B7FF;
+}
+div.item-xtra-info .catItemDateCreated,
+div.item-xtra-info .itemDateCreated,
+div.item-xtra-info .userItemDateCreated,
+div.item-xtra-info .tagItemDateCreated {
+  background: #006F9B;
+}
+div.k2Pagination ul li span,
+#component .pagination ul li span {
+  background: #006F9B;
+}

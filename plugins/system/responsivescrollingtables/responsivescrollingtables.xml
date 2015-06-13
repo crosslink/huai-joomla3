@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>PLG_RESPONSIVESCROLLINGTABLES</name>
+	<author>Jacob Dixon - T J Dixon Limited</author>
+	<creationDate>April 2014</creationDate>
+	<copyright>Copyright (C) 2014 T J Dixon Limited. All rights reserved. http://www.tjdixon.com/</copyright>
+	<license>Licensed under the GNU GPLv3 http://www.gnu.org/licenses/gpl.html or later</license>
+	<authorEmail>jake@tjdixon.com</authorEmail>
+	<authorUrl>www.tjdixon.com</authorUrl>
+	<version>1.2.2</version>
+	<description>PLG_RESPONSIVESCROLLINGTABLES_XML_DESCRIPTION</description>
+	<media destination="plg_responsivescrollingtables" folder="media">
+	  	<folder>js</folder>
+	  	<filename>index.html</filename>
+	</media>
+	<files>
+		<filename plugin="responsivescrollingtables">responsivescrollingtables.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="scrollRightText" type="text" label="PLG_RESPONSIVESCROLLINGTABLES_SCROLL_RIGHT_TEXT" description="PLG_RESPONSIVESCROLLINGTABLES_SCROLL_RIGHT_TEXT_DESC" default="Scroll right for more -&gt;"/>
+			</fieldset>
+		</fields>
+	</config>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_responsivescrollingtables.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_responsivescrollingtables.sys.ini</language>
+	</languages>
+	<updateservers>
+     	<server type="extension" priority="1" name="Responsive Scrolling Tables"><![CDATA[http://www.tjdixon.com/index.php?option=com_ars&view=update&task=stream&format=xml&id=1&dummy=extension.xml]]></server>
+ 	</updateservers>
+</extension>

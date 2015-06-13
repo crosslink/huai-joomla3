@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<name>Default</name>
+	<description>Default Typography</description>
+   <fields name="params">
+	<fieldset name="basic">
+		<field name="direction" type="radio" default="ltr" label="Text Direction" description="Choose the text direction for the template.">
+			<option value="ltr">LTR</option>
+			<option value="rtl">RTL</option>
+		</field>
+		<field name="body_fontSize" type="text" default="13px" label="Global Font Size" description="Set The Body/Global Font Size"/>
+		<field name="body_fontFamily" type="text" default="Fira, Arial, Helvetica, sans-serif" label="Global Font Family" description="Select The Global Font Family"/>
+		
+				<field name="menu_fontSize" type="text" default="14px" label="Main Menu Font Size" description="Select the main menu font size"/>
+				<field name="menu_fontFamily" type="text" default="Fira, Arial, Helvetica, sans-serif" label="Main Menu Font Family" description="Select The Main Menu Font Family"/>
+		<field name="droplevel_fontSize" type="text" default="12px" label="Drop Down Menu Font Size" description="Select the drop down menu font size"/>
+		<field name="droplevel_fontFamily" type="text" default="Fira, Helvetica, sans-serif" label="Dropdown Font Family" description="Select The Main Menu Dropdown Font Family"/>
+		<field name="comHead_fontSize" type="text" default="42px" label="Component Font Size" description="Set The Component Heading Font Size. Affects only .componentheading, will not change all component heads"/>
+		<field name="comHead_fontFamily" type="text" default="UniSans, Arial, Helvetica, sans-serif" label="Component Heading Font Family" description="Set The Component Heading Font Family"/>
+		<field name="catHead_fontSize" type="text" default="36px" label="Content Category Heading Font Size" description="Set The Content Category Heading Font Size. Affects only .contentheading, will not change all content heads"/>
+		<field name="catHead_fontFamily" type="text" default="UniSans, Arial, Helvetica, sans-serif" label="Content Category Heading Font Family" description="Set The Content Heading Font Family"/>
+		<field name="conHead_fontSize" type="text" default="54px" label="Content Article Heading Font Size" description="Set The Content Heading Font Size. Affects only .contentheading, will not change all content heads"/>
+		<field name="conHead_fontFamily" type="text" default="UniSans, Arial, Helvetica, sans-serif" label="Content Article Heading Font Family" description="Set The Content Heading Font Family"/>
+		<field name="modHead_fontSize" type="text" default="22px" label="Module Title Font Size" description="Set The Mod Title Size"/>
+                <field name="breadCrumb_fontSize" type="text" default="12px" label="BreadCrumb Font Size" description="Set The BreadCrumb Size"/>
+		
+		 <field name="h1" type="text" default="58px" label="H1" description="H1 Class Font Size"/>
+     
+		 <field name="h2" type="text" default="44px" label="H2" description="H2 Class Font Size"/>
+    
+		 <field name="h3" type="text" default="24px" label="H3" description="H3 Class Font Size"/>
+     
+		 <field name="h4" type="text" default="22px" label="H4" description="H4 Class Font Size"/>
+  
+		 <field name="h5" type="text" default="20px" label="H5" description="H5 Class Font Size"/>
+ 
+		 <field name="h6" type="text" default="18px" label="H6" description="H6 Class Font Size"/>
+ 
+      <field name="fontface" type="folderlist" default="" label="Select Font Face Font" directory="templates/ocular/fonts" filter="" exclude="" stripext=""/>
+ 
+	</fieldset>
+	</fields>
+</form>
