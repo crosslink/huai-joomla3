@@ -81,8 +81,15 @@ class CKunenaLink {
 
 	static function GetMessageIPLink($msg_ip, $rel = 'nofollow') {
 		if (! empty ( $msg_ip )) {
-			$iplink = '<a href="http://whois.domaintools.com/' . $msg_ip . '" target="_blank">';
-			$iplink .= 'IP: ' . $msg_ip . '</a>';
+// 			$iplink = '<a href="http://whois.domaintools.com/' . $msg_ip . '" target="_blank">';
+// 			$iplink .= 'IP: ' . $msg_ip . '</a>';
+			//$iplink = '<a href="http://whois.domaintools.com/' . $msg_ip . '" target="_blank">';
+			//$iplink .= 'IP: ' . $msg_ip . '</a>';
+			$iparray = explode(".", $msg_ip);
+			$iparray[0] = '*';
+			$iparray[1] = '*';
+			$hidden_ip = implode(".", $iparray);
+					$iplink .= 'IP: ' . $hidden_ip;
 		} else {
 			$iplink = '&nbsp;';
 		}
