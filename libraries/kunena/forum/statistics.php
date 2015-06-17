@@ -96,6 +96,8 @@ class KunenaForumStatistics {
 		$this->loadLastUserId();
 		$this->loadCategoryCount();
 		$this->loadLastDays();
+
+
 	}
 
 	/**
@@ -142,6 +144,9 @@ class KunenaForumStatistics {
 		}
 	}
 
+
+
+
 	public function loadCategoryCount() {
 		if ($this->sectionCount === null) {
 			$this->sectionCount = $this->categoryCount = 0;
@@ -154,6 +159,8 @@ class KunenaForumStatistics {
 					$this->categoryCount ++;
 					$this->topicCount += $category->numTopics;
 					$this->messageCount += $category->numPosts;
+
+
 				}
 			}
 		}

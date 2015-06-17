@@ -39,6 +39,23 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS', true).'
 		<div class="kbody"><?php $this->displayMessages() ?></div>
 	</div>
 </div>
+
+
+
+
+<div class="kblock">
+	<div class="kcontainer">
+<div class="kbody"><script type="text/javascript" id="wumiiRelatedItems"></script></div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
 <?php $this->displayTopicActions(); ?>
 
 
@@ -63,3 +80,17 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS', true).'
 		<?php endif; ?>
 	</div>
 </div>
+
+
+
+
+
+<script type="text/javascript">
+    var wumiiPermaLink = ""; //请用代码生成文章永久的链接
+    var wumiiTitle = ""; //请用代码生成文章标题
+    var wumiiTags = ""; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+    var wumiiCategories = []; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
+    var wumiiSitePrefix = "http://shu.ai/";
+    var wumiiParams = "&num=5&mode=2&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>

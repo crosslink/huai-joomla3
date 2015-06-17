@@ -57,6 +57,13 @@ defined ( '_JEXEC' ) or die ();
 		<?php else: ?>
 		<input type="hidden" name="authorname" value="<?php echo $this->escape($this->profile->getName()) ?>" />
 		<?php endif; ?>
+
+
+
+
+
+
+
 		<input type="text" name="subject" size="35" class="inputbox" maxlength="<?php echo intval($this->config->maxsubject); ?>" value="<?php echo  $this->escape($this->message->subject) ?>" /><br />
 		<textarea class="inputbox" name="message" rows="6" cols="60"></textarea><br />
 		<?php if ($this->topic->authorise('subscribe') && !$this->usertopic->subscribed) : ?>
@@ -66,6 +73,14 @@ defined ( '_JEXEC' ) or die ();
 		<?php endif; ?>
 		<input type="submit" class="kbutton kreply-submit" name="submit" value="<?php echo JText::_('COM_KUNENA_SUBMIT') ?>" title="<?php echo (JText::_('COM_KUNENA_EDITOR_HELPLINE_SUBMIT'));?>" />
 		<input type="reset" class="kbutton kreply-cancel" name="cancel" value="<?php echo JText::_('COM_KUNENA_CANCEL') ?>" title="<?php echo (JText::_('COM_KUNENA_EDITOR_HELPLINE_CANCEL'));?>" />
+
+
+
+
+
+
+
+
 
 
 

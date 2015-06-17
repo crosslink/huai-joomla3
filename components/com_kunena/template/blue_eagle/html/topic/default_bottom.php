@@ -45,3 +45,5 @@ defined ( '_JEXEC' ) or die ();
 <!-- Begin: Message Module Position -->
 <?php $this->displayModulePosition('kunena_msg_' . $this->mmm) ?>
 <!-- Finish: Message Module Position -->
+
+

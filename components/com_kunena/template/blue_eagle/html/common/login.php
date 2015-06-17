@@ -46,6 +46,10 @@ defined ( '_JEXEC' ) or die ();
 							<a href="<?php echo $this->lostPasswordUrl ?>" rel="nofollow"><?php echo JText::_('COM_KUNENA_PROFILEBOX_FORGOT_PASSWORD') ?></a>
 						</span>
 
+<span>&nbsp; &nbsp; </span><span class="kprofilebox-pass">
+							<a href="register" ><?php echo JText::_('COM_KUNENA_REG') ?></a>
+						</span>
+
 
 
 					</div>
