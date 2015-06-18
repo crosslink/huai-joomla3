@@ -306,7 +306,7 @@ class KunenaForumTopic extends KunenaDatabaseObject {
 	 * @return int
 	 */
 	public function getHits() {
-
+		return $this->hits;
 	}
 
 	/**
@@ -321,7 +321,7 @@ class KunenaForumTopic extends KunenaDatabaseObject {
 		$table->id = $this->id;
 
 		if ( $table->hit() ) {
-			$this->hits++;
+			$this->hits = $this->hits + mt_rand(1, 10); //++;
 		}
 	}
 
@@ -905,7 +905,7 @@ class KunenaForumTopic extends KunenaDatabaseObject {
 
 			// Add new posts, hits and attachments into the target topic
 			$target->posts += $this->posts;
-			$target->hits += $this->hits+10;
+			$target->hits += $this->hits + mt_rand(1, 10);
 			$target->attachments += $this->attachments;
 			// Update first and last post information into the target topic
 			$target->updatePostInfo($this->first_post_id, $this->first_post_time, $this->first_post_userid,
