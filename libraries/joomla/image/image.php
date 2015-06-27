@@ -176,7 +176,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return false;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		// Accept a single thumbsize string as parameter
@@ -247,7 +248,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return false;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		// No thumbFolder set -> we will create a thumbs folder in the current image folder
@@ -316,7 +318,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return false;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		// Sanitize width.
@@ -405,7 +408,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return false;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		// Get the image filter instance.
@@ -430,7 +434,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return 0;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		return imagesy($this->handle);
@@ -449,7 +454,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return 0;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		return imagesx($this->handle);
@@ -498,7 +504,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return false;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		return (imagecolortransparent($this->handle) >= 0);
@@ -647,7 +654,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return false;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		// Sanitize width.
@@ -799,7 +807,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return false;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		// Sanitize input
@@ -864,7 +873,8 @@ class JImage
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
-			throw new LogicException('No valid image was loaded.');
+			return false;
+// 			throw new LogicException('No valid image was loaded.');
 		}
 
 		switch ($type)
