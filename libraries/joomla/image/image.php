@@ -129,7 +129,8 @@ class JImage
 		// Make sure the file exists.
 		if (!file_exists($path))
 		{
-			throw new InvalidArgumentException('The image file does not exist.');
+			return array();
+			//throw new InvalidArgumentException('The image file does not exist.');
 		}
 
 		// Get the image file information.
@@ -522,7 +523,8 @@ class JImage
 		// Make sure the file exists.
 		if (!file_exists($path))
 		{
-			throw new InvalidArgumentException('The image file does not exist.');
+			return array();
+			//throw new InvalidArgumentException('The image file does not exist.');
 		}
 
 		// Get the image properties.

@@ -363,38 +363,40 @@ class plgContentMgthumbnails extends JPlugin
 			if (count($controlArr) > 0) return $imgTag; //ignored class return original image tag
 		}		
 
-	//load image
-		$mgImage = new JImage;
-		$mgImage->loadFile(urldecode(JPATH_ROOT.'/'.$img['src']));
-
-		if (!$img['width']) {
-		//if width not given
-			$ratio = $mgImage->getWidth() / $mgImage->getHeight();
-		  $img['width'] = round($img['height'] * $ratio, 0);
-		} elseif (!$img['height']) {
-		//if height not given
-			$ratio = $mgImage->getHeight() / $mgImage->getWidth();
-		  $img['height'] = round($img['width'] * $ratio, 0);
-		} 
+		//load image
+		$imgPathFile = urldecode(JPATH_ROOT.'/'.$img['src']);
+		if (file_exists($imgPathFile)) {
+			$mgImage = new JImage;
+			$mgImage->loadFile();
 	
-			//create thumbanil filename
-				$thumbPath = $this->params->get('mgThumbPath');
-				//if directory not exists, create it
-				jimport( 'joomla.filesystem.folder' );
-				JFolder::create($thumbPath);
-				$imgThumbName = $img['width'].'x'.$img['height'].'-'.str_replace('/','-',$img['src']);
+			if (!$img['width']) {
+			//if width not given
+				$ratio = $mgImage->getWidth() / $mgImage->getHeight();
+			  $img['width'] = round($img['height'] * $ratio, 0);
+			} elseif (!$img['height']) {
+			//if height not given
+				$ratio = $mgImage->getHeight() / $mgImage->getWidth();
+			  $img['height'] = round($img['width'] * $ratio, 0);
+			} 
 		
-			//if thumbnail image already created we can skip creating thumbnail
-				if (!file_exists(JPATH_ROOT.'/'.$thumbPath.$imgThumbName)) {		
-				//lets create thumbanil
-				//resize image
-					$mgImage->resize($img['width'], $img['height'], false);
-					
-				//write out resized image file
-					$thumbQuality = $this->params->get('thumbQuality');
-					$mgImage->toFile(JPATH_ROOT.'/'.$thumbPath.$imgThumbName, $type, array('quality' => $thumbQuality ));
-				}
-		
+				//create thumbanil filename
+					$thumbPath = $this->params->get('mgThumbPath');
+					//if directory not exists, create it
+					jimport( 'joomla.filesystem.folder' );
+					JFolder::create($thumbPath);
+					$imgThumbName = $img['width'].'x'.$img['height'].'-'.str_replace('/','-',$img['src']);
+			
+				//if thumbnail image already created we can skip creating thumbnail
+					if (!file_exists(JPATH_ROOT.'/'.$thumbPath.$imgThumbName)) {		
+					//lets create thumbanil
+					//resize image
+						$mgImage->resize($img['width'], $img['height'], false);
+						
+					//write out resized image file
+						$thumbQuality = $this->params->get('thumbQuality');
+						$mgImage->toFile(JPATH_ROOT.'/'.$thumbPath.$imgThumbName, $type, array('quality' => $thumbQuality ));
+					}
+		}
 	//replace src with the new thumbnail image
 		$reImgTag = preg_replace('|(src\=\"([0-9a-zA-Z\-\_\.\/]+)\")|i', ' src="'.JURI::base().$thumbPath.$imgThumbName.'" ', $imgTag );
 
