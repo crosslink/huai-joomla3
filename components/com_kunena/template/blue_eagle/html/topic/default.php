@@ -9,6 +9,16 @@
  * @link http://www.kunena.org
  **/
 defined ( '_JEXEC' ) or die ();
+
+
+
+
+
+
+
+
+
+
 ?>
 <?php
 $this->document->addScriptDeclaration('// <![CDATA[
@@ -86,11 +96,25 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS', true).'
 
 
 <script type="text/javascript">
-    var wumiiPermaLink = ""; //请用代码生成文章永久的链接
-    var wumiiTitle = ""; //请用代码生成文章标题
-    var wumiiTags = ""; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
-    var wumiiCategories = []; //请用代码生成文章分类，分类名放在 JSONArray 中，如: ["分类1", "分类2"]
     var wumiiSitePrefix = "http://shu.ai/";
     var wumiiParams = "&num=5&mode=2&pf=JAVASCRIPT";
 </script>
 <script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+<script type="text/javascript">
+    var wumiiSitePrefix = "http://ayo.net.au/";
+    var wumiiParams = "&num=5&mode=2&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
+
+
+
+
+
+
+
+
+
+
+
+

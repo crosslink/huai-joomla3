@@ -227,6 +227,8 @@ class KunenaViewTopic extends KunenaView {
 		$this->display($tpl);
 	}
 
+
+
 	protected function DisplayReply($tpl = null) {
 		$this->setLayout('edit');
 
@@ -256,11 +258,32 @@ class KunenaViewTopic extends KunenaView {
 			return false;
 		}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		// Run events
 		$params = new JRegistry();
 		$params->set('ksource', 'kunena');
 		$params->set('kunena_view', 'topic');
 		$params->set('kunena_layout', 'reply');
+
 
 		$dispatcher = JDispatcher::getInstance();
 		JPluginHelper::importPlugin('kunena');
@@ -275,6 +298,11 @@ class KunenaViewTopic extends KunenaView {
 		list ($this->topic, $this->message) = $parent->newReply($saved ? $saved : $quote);
 		$this->_prepareDocument('reply');
 		$this->action = 'post';
+
+
+
+
+
 
 		$this->allowedExtensions = KunenaForumMessageAttachmentHelper::getExtensions($this->category);
 
@@ -307,6 +335,7 @@ class KunenaViewTopic extends KunenaView {
 		$params->set('ksource', 'kunena');
 		$params->set('kunena_view', 'topic');
 		$params->set('kunena_layout', 'reply');
+
 
 		$dispatcher = JDispatcher::getInstance();
 		JPluginHelper::importPlugin('kunena');
@@ -610,6 +639,16 @@ class KunenaViewTopic extends KunenaView {
 			// this user is allowed to reply to this topic
 			$this->topicButtons->set('reply', $this->getButton(sprintf($layout, 'reply'), 'reply', 'topic', 'communication'));
 		}
+
+
+
+		// create topic
+		if ($this->topic->authorise('create')) {
+			// this user is allowed to create to this topic
+			$this->topicButtons->set('create', $this->getButton(sprintf($layout, 'create'), 'create', 'topic', 'communication'));
+		}
+
+
 
 		// Subscribe topic
 		if ($this->usertopic->subscribed) {
@@ -988,6 +1027,8 @@ class KunenaViewTopic extends KunenaView {
 			$this->title = JText::_ ( 'COM_KUNENA_POST_REPLY_TOPIC' ) . ' ' . $this->topic->subject;
 			$this->setTitle($this->title);
 			// TODO: set keywords and description
+
+
 
 		} elseif($type=='edit'){
 

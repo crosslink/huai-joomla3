@@ -58,7 +58,7 @@ $this->cache = false;
 		<ul class="kpagination">
 			<li class="page"><?php echo JText::_('COM_KUNENA_PAGE') ?></li>
 			<li><?php echo $this->GetTopicLink ( $this->topic, 0, 1 ) ?></li>
-			<?php if ($this->pages > 5) : $startPage = $this->pages - 4; ?>
+			<?php if ($this->pages > 4) : $startPage = $this->pages - 3; ?>
 			<li class="more">...</li>
 			<?php else: $startPage = 1; endif;
 			for($hopPage = $startPage; $hopPage < $this->pages; $hopPage ++) : ?>

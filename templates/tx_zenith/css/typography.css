@@ -4093,7 +4093,7 @@ input[type="submit"].btn.btn-mini {
 .pagenav:before,
 .pagenav:after {
   display: table;
-  content: "";
+
   line-height: 0;
 }
 .pager:after,
