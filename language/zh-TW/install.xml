@@ -2,8 +2,8 @@
 <extension version="3.4" client="site" type="language" method="upgrade">
 	<name>中文(繁體．台灣)</name>
 	<tag>zh-TW</tag>
-	<version>3.4.1.1</version>
-	<creationDate>2015-3-23</creationDate>
+	<version>3.4.2.1</version>
+	<creationDate>2015-7-1</creationDate>
 	<author>Joomla! Taiwan User Community</author>
 	<authorEmail>eddy@joomla.com.tw</authorEmail>
 	<authorUrl>www.joomla.org.tw</authorUrl>
@@ -28,6 +28,7 @@
 		<filename>zh-TW.files_joomla.sys.ini</filename>
 		<filename>zh-TW.finder_cli.ini</filename>
 		<filename>zh-TW.ini</filename>
+		<filename>zh-TW.lib_fof.ini</filename>
 		<filename>zh-TW.lib_fof.sys.ini</filename>
 		<filename>zh-TW.lib_idna_convert.sys.ini</filename>
 		<filename>zh-TW.lib_joomla.ini</filename>
@@ -92,7 +93,6 @@
 		<filename>zh-TW.tpl_beez3.sys.ini</filename>
 		<filename>zh-TW.tpl_protostar.ini</filename>
 		<filename>zh-TW.tpl_protostar.sys.ini</filename>
-		<filename>index.html</filename>
 		<filename file="meta">install.xml</filename>
 		<filename file="meta">zh-TW.xml</filename>
 	</files>

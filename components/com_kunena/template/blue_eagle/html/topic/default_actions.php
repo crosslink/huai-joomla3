@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Kunena Component
+ * @package Kunena.Template.Blue_Eagle
+ * @subpackage Topic
+ *
+ * @copyright (C) 2008 - 2015 Kunena Team. All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link http://www.kunena.org
+ **/
 defined ( '_JEXEC' ) or die ();
 
 // Goto up / down
@@ -15,16 +23,15 @@ $goto .= '<a class="kbuttongoto" href="#forum'.$locations[$this->location].'" re
 			<?php echo $goto ?>
 		</td>
 		<td class="klist-actions-forum">
-		<?php if ($this->topicButtons->get('reply') || $this->topicButtons->get('subscribe')|| $this->topicButtons->get('create')|| $this->topicButtons->get('favorite') ) : ?>
+		<?php if ($this->topicButtons->get('reply') || $this->topicButtons->get('subscribe') || $this->topicButtons->get('favorite') ) : ?>
 			<div class="kmessage-buttons-row">
 			<?php echo $this->topicButtons->get('reply') ?>
-			<?php echo $this->topicButtons->get('create') ?>
 			<?php echo $this->topicButtons->get('subscribe') ?>
 			<?php echo $this->topicButtons->get('favorite') ?>
-	
+			</div>
 		<?php endif ?>
 		<?php if ($this->topicButtons->get('undelete') || $this->topicButtons->get('delete') || $this->topicButtons->get('moderate') || $this->topicButtons->get('sticky') || $this->topicButtons->get('lock')) : ?>
-
+			<div class="kmessage-buttons-row">
 			<?php echo $this->topicButtons->get('undelete') ?>
 			<?php echo $this->topicButtons->get('delete') ?>
 			<?php echo $this->topicButtons->get('moderate') ?>

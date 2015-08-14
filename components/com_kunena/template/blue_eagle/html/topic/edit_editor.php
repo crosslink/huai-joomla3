@@ -1,6 +1,13 @@
 <?php
-
-
+/**
+ * Kunena Component
+ * @package Kunena.Template.Blue_Eagle
+ * @subpackage Topic
+ *
+ * @copyright (C) 2008 - 2015 Kunena Team. All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link http://www.kunena.org
+ **/
 defined ( '_JEXEC' ) or die ();
 
 // Kunena bbcode editor
@@ -61,7 +68,7 @@ defined ( '_JEXEC' ) or die ();
 
 			<div id="kbbcode-link-options" style="display: none;">
 				<?php echo JText::_('COM_KUNENA_EDITOR_LINK_URL'); ?>&nbsp;
-				<input id="kbbcode-link_url" name="url" type="text" size="40" 
+				<input id="kbbcode-link_url" name="url" type="text" size="40" value="http://"
 					onmouseover="document.id('helpbox').set('value', '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_LINKURL', true); ?>')" />
 				<?php echo JText::_('COM_KUNENA_EDITOR_LINK_TEXT'); ?>&nbsp;
 				<input name="text2" id="kbbcode-link_text" type="text" size="30" maxlength="150"
@@ -71,27 +78,16 @@ defined ( '_JEXEC' ) or die ();
 					onmouseover="document.id('helpbox').set('value', '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_LINKAPPLY', true); ?>')" />
 			</div>
 
-
-
-
-
-
-
 			<div id="kbbcode-image-options" style="display: none;">
 				<?php echo JText::_('COM_KUNENA_EDITOR_IMAGELINK_SIZE'); ?>&nbsp;
-				<input id="kbbcode-image_size" name="size" type="text"  size="10" maxlength="10"
+				<input id="kbbcode-image_size" name="size" type="text" size="10" maxlength="10"
 					onmouseover="document.id('helpbox').set('value', '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKSIZE', true); ?>')" />
 				<?php echo JText::_('COM_KUNENA_EDITOR_IMAGELINK_URL'); ?>&nbsp;
-				<input name="url2" id="kbbcode-image_url" type="text" size="40" value=""
+				<input name="url2" id="kbbcode-image_url" type="text" size="40" value="http://"
 					onmouseover="document.id('helpbox').set('value', '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKURL', true); ?>')" />&nbsp;
 				<input type="button" name="Link" value="<?php echo JText::_('COM_KUNENA_EDITOR_INSERT'); ?>" onclick="kInsertImageLink()"
 					onmouseover="document.id('helpbox').set('value', '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKAPPLY', true); ?>')" />
 			</div>
-
-
-
-
-
 
 			<?php if (!$this->message->parent && isset($this->poll)) : ?>
 			<div id="kbbcode-poll-options" style="display: none;">
@@ -116,7 +112,7 @@ defined ( '_JEXEC' ) or die ();
 				if($this->poll->exists()) {
 					$x = 1;
 					foreach ($this->poll->getOptions() as $poll_option) {
-						echo '<div class="polloption">Option '.$x.' <input type="text" maxlength = "25" id="field_option'.$x.'" name="polloptionsID['.$poll_option->id.']" value="'.$poll_option->text.'" onmouseover="document.id(\'helpbox\').set(\'value\', \''.JText::_('COM_KUNENA_EDITOR_HELPLINE_OPTION', true).'\')" /></div>';
+						echo '<div class="polloption">Option '.$x.' <input type="text" size="100" id="field_option'.$x.'" name="polloptionsID['.$poll_option->id.']" value="'.$poll_option->text.'" onmouseover="document.id(\'helpbox\').set(\'value\', \''.JText::_('COM_KUNENA_EDITOR_HELPLINE_OPTION', true).'\')" /></div>';
 						$x++;
 					}
 				}
@@ -168,7 +164,7 @@ defined ( '_JEXEC' ) or die ();
 				echo JText::_('COM_KUNENA_EDITOR_HELPLINE_VIDEOPROVIDER', true);
 				?>')">
 				<?php
-				$vid_provider = array ('Youku', 'tudou', 'sina',  'weibo', 'fenghuang',  'ku6',  'DivX,divx]http://', 'Flash,flash]http://', 'FlashVars,flashvars param=]http://', 'MediaPlayer,mediaplayer]http://', 'MySpace', 'QuickTime,quicktime]http://', 'YouTube');
+				$vid_provider = array ('', 'Bofunk', 'Break', 'Clipfish', 'Dailymotion', 'DivX,divx]http://', 'Flash,flash]http://', 'FlashVars,flashvars param=]http://', 'MediaPlayer,mediaplayer]http://', 'Metacafe', 'MySpace', 'QuickTime,quicktime]http://', 'RealPlayer,realplayer]http://', 'RuTube', 'Sapo', 'Streetfire', 'Veoh', 'Videojug', 'Vimeo', 'Wideo.fr', 'YouTube', 'Youku' );
 				foreach ( $vid_provider as $vid_type ) {
 					$vid_type = explode ( ',', $vid_type );
 					echo '<option value = "' . (! empty ( $vid_type [1] ) ? $this->escape($vid_type [1]) : JString::strtolower ( $this->escape($vid_type [0]) ) . '') . '">' . $this->escape($vid_type [0]) . '</option>';
@@ -192,7 +188,7 @@ defined ( '_JEXEC' ) or die ();
 			<?php
 			echo JText::_('COM_KUNENA_EDITOR_VIDEO_URL');
 			?><input id="kvideourl" name="videourl"
-				type="text" size="30" maxlength="250" 
+				type="text" size="30" maxlength="250" value="http://"
 				onmouseover="document.id('helpbox').set('value', '<?php
 				echo JText::_('COM_KUNENA_EDITOR_HELPLINE_VIDEOURL', true);
 				?>')" />

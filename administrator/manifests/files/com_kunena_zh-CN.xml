@@ -2,8 +2,8 @@
 <!DOCTYPE extension>
 <extension type="file" version="2.5" method="upgrade">
 	<name>Kunena Language - Chinese (China)</name>
-	<version>3.0.8</version>
-	<creationDate>2015-04-05</creationDate>
+	<version>4.0.3</version>
+	<creationDate>2015-07-01</creationDate>
 	<build>@kunenaversionbuild@</build>
 	<author>Kunena Team</author>
 	<authorEmail>translations@kunena.org</authorEmail>
@@ -37,6 +37,7 @@
 			<filename>zh-CN.com_kunena.templates.ini</filename>
 			<filename>zh-CN.com_kunena.tpl_blue_eagle.ini</filename>
 			<filename>zh-CN.com_kunena.views.ini</filename>
+			<filename>zh-CN.kunena_tmpl_crypsis.ini</filename>
 		</files>
 	</fileset>
 </extension>

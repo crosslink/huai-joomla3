@@ -1,11 +1,15 @@
 <?php
-
+/**
+ * Kunena Component
+ * @package Kunena.Template.Blue_Eagle
+ * @subpackage Topic
+ *
+ * @copyright (C) 2008 - 2015 Kunena Team. All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link http://www.kunena.org
+ **/
 defined ( '_JEXEC' ) or die ();
 ?>
-
-
-
-
 <div class="kmsg-header kmsg-header-bottom">
 	<h2>
 		<span class="kmsgtitle<?php echo $this->escape($this->msgsuffix) ?> kmsg-title-bottom">
@@ -37,13 +41,9 @@ defined ( '_JEXEC' ) or die ();
 				<?php $this->displayMessageProfile('horizontal') ?>
 			</td>
 		</tr>
-
-
 	</tbody>
 </table>
 
 <!-- Begin: Message Module Position -->
 <?php $this->displayModulePosition('kunena_msg_' . $this->mmm) ?>
 <!-- Finish: Message Module Position -->
-
-

@@ -2,8 +2,8 @@
 <!DOCTYPE extension>
 <extension type="module" version="2.5" client="site" method="upgrade">
 	<name>mod_kunenamenu</name>
-	<version>3.0.8</version>
-	<creationDate>2015-04-05</creationDate>
+	<version>4.0.3</version>
+	<creationDate>2015-06-29</creationDate>
 	<author>Kunena Team</author>
 	<authorEmail>kunena@kunena.org</authorEmail>
 	<authorUrl>http://www.kunena.org</authorUrl>
@@ -15,7 +15,6 @@
 		<folder>tmpl</folder>
 		<folder>language</folder>
 		<filename>class.php</filename>
-		<filename>index.html</filename>
 	</files>
 	<config>
 		<fields name="params">

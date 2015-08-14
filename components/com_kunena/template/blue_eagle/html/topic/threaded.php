@@ -37,23 +37,7 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS', true).'
 	<div class="kcontainer">
 		<div class="kbody">
 			<?php $this->displayMessage($this->state->get('item.mesid'), $this->messages[$this->state->get('item.mesid')]) ?>
-	
-
-
-	<?php if (empty($this->message_closed)) : ?>
-		<?php $this->displayTopicActions(); ?>
-	<?php endif ?>
-
-
-
-
-
-
-
-
-
-
-
+			<?php $this->displayTopicActions(); ?>
 		</div>
 	</div>
 </div>

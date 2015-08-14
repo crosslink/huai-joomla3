@@ -60,7 +60,7 @@ $this->k=0;
 				<strong><?php echo JText::_('COM_KUNENA_POST_AS_ANONYMOUS'); ?></strong>
 			</td>
 			<td class="kcol-mid">
-				<input type="checkbox" id="kanonymous" name="anonymous" value="0" <?php if ($this->post_anonymous) echo 'checked="unchecked"'; ?> />
+				<input type="checkbox" id="kanonymous" name="anonymous" value="1" <?php if ($this->post_anonymous) echo 'checked="checked"'; ?> />
 				<label for="kanonymous"><?php echo JText::_('COM_KUNENA_POST_AS_ANONYMOUS_DESC'); ?></label>
 			</td>
 		</tr>

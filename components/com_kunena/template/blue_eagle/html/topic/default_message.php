@@ -1,30 +1,21 @@
 <?php
-
+/**
+ * Kunena Component
+ * @package Kunena.Template.Blue_Eagle
+ * @subpackage Topic
+ *
+ * @copyright (C) 2008 - 2015 Kunena Team. All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link http://www.kunena.org
+ **/
 defined ( '_JEXEC' ) or die ();
 ?>
 
-<div class="kmessage-buttons-cover">
-
-
-		<span class="kmsgdate kmsgdate-left" title="<?php echo KunenaDate::getInstance($this->message->time)->toKunena('config_post_dateformat_hover') ?>">
-			<?php echo KunenaDate::getInstance($this->message->time)->toKunena('config_post_dateformat') ?>
-		</span>
-
-&nbsp;&nbsp;
-		<span class="kmsg-id-left">
-			<a id="<?php echo intval($this->message->id) ?>"></a>
-			<?php echo $this->numLink ?>
-		</span>
-
-</div>
-<br>
-
-
+<div class="kmsgbody">
 	<div class="kmsgtext">
 		<?php echo KunenaHtmlParser::parseBBCode ($this->message->message, $this) ?>
 	</div>
 </div>
-
 <div>
 <?php if (!empty($this->attachments)) : ?>
 <div class="kmsgattach">
@@ -57,37 +48,16 @@ defined ( '_JEXEC' ) or die ();
 		<?php else: ?>
 		<input type="hidden" name="authorname" value="<?php echo $this->escape($this->profile->getName()) ?>" />
 		<?php endif; ?>
-
-
-
-
-
-
-
 		<input type="text" name="subject" size="35" class="inputbox" maxlength="<?php echo intval($this->config->maxsubject); ?>" value="<?php echo  $this->escape($this->message->subject) ?>" /><br />
 		<textarea class="inputbox" name="message" rows="6" cols="60"></textarea><br />
 		<?php if ($this->topic->authorise('subscribe') && !$this->usertopic->subscribed) : ?>
-		<?php if ( !$this->usertopic->subscribed ): ?><input type="checkbox" name="subscribeMe" value="1" <?php if ($this->config->subscriptionschecked == 1) echo 'checked="checked"' ?> /><?php endif; ?>
+		<?php if ( !$this->usertopic->subscribed ): ?><input type="checkbox" name="subscribeMe" value="1" <?php if ($this->config->subscriptionschecked == 1 && $this->me->canSubscribe || $this->config->subscriptionschecked == 0 && $this->me->canSubscribe) echo 'checked="checked"' ?> /><?php endif; ?>
 		<i><?php echo JText::_('COM_KUNENA_POST_NOTIFIED'); ?></i>
 		<br />
 		<?php endif; ?>
 		<input type="submit" class="kbutton kreply-submit" name="submit" value="<?php echo JText::_('COM_KUNENA_SUBMIT') ?>" title="<?php echo (JText::_('COM_KUNENA_EDITOR_HELPLINE_SUBMIT'));?>" />
 		<input type="reset" class="kbutton kreply-cancel" name="cancel" value="<?php echo JText::_('COM_KUNENA_CANCEL') ?>" title="<?php echo (JText::_('COM_KUNENA_EDITOR_HELPLINE_CANCEL'));?>" />
-
-
-
-
-
-
-
-
-
-
-
+		<small><?php echo JText::_('COM_KUNENA_QMESSAGE_NOTE') ?></small>
 	</form>
 </div>
-
-
-
 <?php endif ?>
-

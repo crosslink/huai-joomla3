@@ -17,7 +17,7 @@
 
 /* ------------------------- COLOR PALETTE FOR BLUE EAGLE
 
-Dark blue color: 			#333			RGB: 83/136/180
+Dark blue color: 			#5388B4			RGB: 83/136/180
 Medium blue color: 			#609FBF			RGB: 96/159/191
 Light grey color:			#F2F1EE 		RGB: 242/241/238
 Medium grey color:			#999999 		RGB: 153/153/153
@@ -66,11 +66,16 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 
 #Kunena a:hover { color: #FF0000 !important; background-color:transparent !important; }
 
+#Kunena .icon-knewchar,
 #Kunena .knewchar {
 	color: #009900;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+#Kunena .icon-big {
+	font-size: 32px;
+	margin-top: 5px;
+}
 /* Block styling
 ----------------------------------------------------------------------------------------------- */
 
@@ -91,7 +96,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 }
 
 #Kunena div.kblock div.ktitle {
-	background-color: #333;
+	background-color: #5388B4;
 	color: #FFFFFF;
 }
 #Kunena div.kblock div.ktitle h1,
@@ -653,6 +658,9 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 	background-color: #CCCCCC !important;
 }
 
+#Kunena .kmoved td {
+	background-color: #CCCCCC !important;
+}
 
 /* User info on posts
 ----------------------------------------*/

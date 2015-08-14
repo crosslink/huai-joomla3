@@ -2,8 +2,8 @@
 <extension version="3.4" client="administrator" type="language" method="upgrade">
 	<name>中文(繁體．台灣)</name>
 	<tag>zh-TW</tag>
-	<version>3.4.1.1</version>
-	<creationDate>2015-3-23</creationDate>
+	<version>3.4.2.1</version>
+	<creationDate>2015-7-1</creationDate>
 	<author>Joomla! Taiwan User Community</author>
 	<authorEmail>eddy@joomla.org.tw</authorEmail>
 	<authorUrl>www.joomla.com.tw</authorUrl>
@@ -213,8 +213,7 @@
 		<filename>zh-TW.tpl_hathor.sys.ini</filename>
 		<filename>zh-TW.tpl_isis.ini</filename>
 		<filename>zh-TW.tpl_isis.sys.ini</filename>
-		<filename>index.html</filename> 
-		<filename file="meta">zh-TW.xml</filename>	
+		<filename file="meta">zh-TW.xml</filename>
 		<filename file="meta">install.xml</filename>
 	</files>
 	<params />

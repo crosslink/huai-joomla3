@@ -2,8 +2,8 @@
 <!DOCTYPE extension>
 <extension version="2.5" type="plugin" group="kunena" method="upgrade">
 	<name>plg_kunena_community</name>
-	<version>3.0.8</version>
-	<creationDate>2015-04-05</creationDate>
+	<version>4.0.3</version>
+	<creationDate>2015-06-29</creationDate>
 	<author>Kunena Team</author>
 	<authorEmail>Kunena@kunena.org</authorEmail>
 	<authorUrl>http://www.kunena.org</authorUrl>
@@ -18,7 +18,6 @@
 		<filename>login.php</filename>
 		<filename>private.php</filename>
 		<filename>profile.php</filename>
-		<filename>index.html</filename>
 		<folder>language</folder>
 	</files>
 	<config>

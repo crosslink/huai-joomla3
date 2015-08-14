@@ -12,11 +12,21 @@ defined ( '_JEXEC' ) or die ();
 ?>
 
 <?php $this->displayCategories () ?>
-
-
-
-
-
+<?php if ($this->category->headerdesc) : ?>
+<div class="kblock">
+	<div class="kheader">
+		<span class="ktoggler"><a class="ktoggler close" title="<?php echo JText::_('COM_KUNENA_TOGGLER_COLLAPSE') ?>" rel="frontstats_tbody"></a></span>
+		<h2><span><?php echo JText::_('COM_KUNENA_FORUM_HEADER'); ?></span></h2>
+	</div>
+	<div class="kcontainer" id="frontstats_tbody">
+		<div class="kbody">
+			<div class="kfheadercontent">
+				<?php echo KunenaHtmlParser::parseBBCode ( $this->category->headerdesc ); ?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endif; ?>
 
 <?php if (!$this->category->isSection()) : ?>
 <table class="klist-actions">
@@ -35,17 +45,12 @@ defined ( '_JEXEC' ) or die ();
 	<?php echo JHtml::_( 'form.token' ); ?>
 
 <div class="kblock kflat">
-
-
-
 	<div class="kheader">
 		<?php if (!empty($this->topicActions)) : ?>
-		<span><input class="kcheckall" type="checkbox" name="toggle" value="" /></span>
+		<span class="kcheckbox select-toggle"><input class="kcheckall" type="checkbox" name="toggle" value="" /></span>
 		<?php endif; ?>
+		<h3><span><?php echo $this->escape($this->headerText); ?></span></h3>
 	</div>
-
-
-
 	<div class="kcontainer">
 		<div class="kbody">
 				<table class="kblocktable<?php echo $this->escape($this->category->class_sfx); ?>" id="kflattable">

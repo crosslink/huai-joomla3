@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Kunena Component
+ * @package Kunena.Template.Blue_Eagle
+ * @subpackage Statistics
+ *
+ * @copyright (C) 2008 - 2015 Kunena Team. All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+ * @link http://www.kunena.org
+ **/
 defined ( '_JEXEC' ) or die ();
 
 $template = KunenaTemplate::getInstance();
@@ -7,9 +15,9 @@ $template = KunenaTemplate::getInstance();
 <!-- BEGIN: GENERAL STATS -->
 <?php if($this->config->showgenstats): ?>
 <div class="kblock kgenstats">
-	<div class="kheaderhei">
+	<div class="kheader">
 		<span class="ktoggler"><a class="ktoggler close" title="<?php echo JText::_('COM_KUNENA_TOGGLER_COLLAPSE') ?>" rel="kgenstats_tbody"></a></span>
-		<h1bai><span><?php echo JText::_('COM_KUNENA_STAT_FORUMSTATS'); ?></span></h1bai>
+		<h1><span><?php echo $this->escape($this->config->board_title); ?> <?php echo JText::_('COM_KUNENA_STAT_FORUMSTATS'); ?></span></h1>
 	</div>
 	<div class="kcontainer" id="kgenstats_tbody">
 		<div class="kbody">
@@ -85,41 +93,5 @@ $k = 0;
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php endforeach; ?>
 <?php $this->displayWhoIsOnline(); ?>

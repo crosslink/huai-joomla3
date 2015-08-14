@@ -9,16 +9,6 @@
  * @link http://www.kunena.org
  **/
 defined ( '_JEXEC' ) or die ();
-
-
-
-
-
-
-
-
-
-
 ?>
 <?php
 $this->document->addScriptDeclaration('// <![CDATA[
@@ -39,8 +29,8 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS', true).'
 ?>
 
 <div class="kblock">
-	<div class="kheaderhei">
-		<h1bai><span><?php echo JText::_('COM_KUNENA_TOPIC') ?> <?php echo $this->escape($this->topic->subject) ?></span></h1>
+	<div class="kheader">
+		<h1><span><?php echo JText::_('COM_KUNENA_TOPIC') ?> <?php echo $this->escape($this->topic->subject) ?></span></h1>
 		<?php $this->displayModulePosition( 'kunena_topictitle' ); ?>
 		<?php if ($this->usertopic->favorite) : ?><div class="kfavorite"></div><?php endif ?>
 		<?php if (!empty($this->keywords)) : ?><div class="kkeywords"><?php echo JText::sprintf('COM_KUNENA_TOPIC_TAGS', $this->escape($this->keywords)) ?></div><?php endif ?>
@@ -49,27 +39,7 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS', true).'
 		<div class="kbody"><?php $this->displayMessages() ?></div>
 	</div>
 </div>
-
-
-
-
-<div class="kblock">
-	<div class="kcontainer">
-<div class="kbody"><script type="text/javascript" id="wumiiRelatedItems"></script></div>
-	</div>
-</div>
-
-
-
-
-
-
-
-
 <?php $this->displayTopicActions(); ?>
-
-
-
 
 <div class="kcontainer klist-bottom">
 	<div class="kbody">
@@ -90,31 +60,3 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS', true).'
 		<?php endif; ?>
 	</div>
 </div>
-
-
-
-
-
-<script type="text/javascript">
-    var wumiiSitePrefix = "http://shu.ai/";
-    var wumiiParams = "&num=5&mode=2&pf=JAVASCRIPT";
-</script>
-<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
-
-<script type="text/javascript">
-    var wumiiSitePrefix = "http://ayo.net.au/";
-    var wumiiParams = "&num=5&mode=2&pf=JAVASCRIPT";
-</script>
-<script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script>
-
-
-
-
-
-
-
-
-
-
-
-
